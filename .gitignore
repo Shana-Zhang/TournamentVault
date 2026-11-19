@@ -1,0 +1,14 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+coverage.json
+.env
+.env.*
+!.env.example
+.npm-cache/
+*.log
+deployment/hardhat.json
+deployment/localhost.json
+desktop.ini
+.DS_Store
