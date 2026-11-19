@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-18T10:22:21.994Z",
+  "compiler": "v0.8.26+commit.8a97fa7a",
+  "contracts": [
+    {
+      "name": "LearningRewardToken",
+      "address": "0xF258884763CEc4239F33A9bBf9f2c603Bb1b2D69",
+      "localCreationBytecodeHash": "0xd3c5640a9ee525eaf377e6b04a23157c4554636b0d5e5c2739cd756da7022e8d",
+      "deploymentCreationBytecodeHash": "0xd3c5640a9ee525eaf377e6b04a23157c4554636b0d5e5c2739cd756da7022e8d",
+      "matches": true
+    },
+    {
+      "name": "TournamentVault",
+      "address": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "localCreationBytecodeHash": "0x68511e697e3f080cc5df277b6abda172cf274accb15d7b487773b2b058ad4b30",
+      "deploymentCreationBytecodeHash": "0x68511e697e3f080cc5df277b6abda172cf274accb15d7b487773b2b058ad4b30",
+      "matches": true
+    },
+    {
+      "name": "LRTExchange",
+      "address": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+      "localCreationBytecodeHash": "0xdf7295d63bb93b421d43b438097396e34ac52fb70cbbe64a74a36344188f3870",
+      "deploymentCreationBytecodeHash": "0xdf7295d63bb93b421d43b438097396e34ac52fb70cbbe64a74a36344188f3870",
+      "matches": true
+    }
+  ]
+}
