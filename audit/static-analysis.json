@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-11-19T08:46:14.887Z",
+  "tool": "Project Solidity AST checks",
+  "version": "1.0.0",
+  "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+  "scope": [
+    "contracts/LearningRewardToken.sol",
+    "contracts/TournamentVault.sol",
+    "contracts/LRTExchange.sol"
+  ],
+  "astNodes": 1888,
+  "limitations": "A small rule set and compiler diagnostics. This is not Slither, symbolic execution, formal verification or an independent audit.",
+  "compilerDiagnostics": [],
+  "bytecodeSizes": [
+    {
+      "contract": "LRTExchange",
+      "runtimeBytes": 2513
+    },
+    {
+      "contract": "LearningRewardToken",
+      "runtimeBytes": 1764
+    },
+    {
+      "contract": "TournamentVault",
+      "runtimeBytes": 11804
+    }
+  ],
+  "findings": [
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 76,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "loop",
+      "source": "contracts/TournamentVault.sol",
+      "line": 79,
+      "detail": "Confirm bounded input and settlement gas cost"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 99,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 110,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 125,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 135,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 138,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 146,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 149,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 158,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 167,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 182,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 183,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "timestamp",
+      "source": "contracts/TournamentVault.sol",
+      "line": 184,
+      "detail": "Deadline boundary: timestamp has limited proposer influence"
+    },
+    {
+      "severity": "Review",
+      "rule": "external-call",
+      "source": "contracts/TournamentVault.sol",
+      "line": 225,
+      "detail": "Check return value, effects before interaction, reentrancy guard and recipient scope"
+    },
+    {
+      "severity": "Review",
+      "rule": "loop",
+      "source": "contracts/TournamentVault.sol",
+      "line": 238,
+      "detail": "Confirm bounded input and settlement gas cost"
+    },
+    {
+      "severity": "Review",
+      "rule": "loop",
+      "source": "contracts/TournamentVault.sol",
+      "line": 240,
+      "detail": "Confirm bounded input and settlement gas cost"
+    },
+    {
+      "severity": "Review",
+      "rule": "loop",
+      "source": "contracts/TournamentVault.sol",
+      "line": 249,
+      "detail": "Confirm bounded input and settlement gas cost"
+    },
+    {
+      "severity": "Review",
+      "rule": "external-call",
+      "source": "contracts/LRTExchange.sol",
+      "line": 61,
+      "detail": "Check return value, effects before interaction, reentrancy guard and recipient scope"
+    }
+  ],
+  "sourceSHA256": {
+    "contracts/LearningRewardToken.sol": "94d6cf9d5283da057a5fdb00e9f49b2716dc170eaa4223185892a00ab30d5df9",
+    "contracts/TournamentVault.sol": "30f8a422c25f64444cc0f76d1df3f4b6b2768de78c96064ac9d3385e5ff83beb",
+    "contracts/LRTExchange.sol": "291adbf953168d428ff75fbac651ae715155398d50d122353695bfb8395e0646"
+  }
+}
