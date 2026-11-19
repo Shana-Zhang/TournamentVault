@@ -1,0 +1,182 @@
+{
+  "network": "hardhat",
+  "chainId": 31337,
+  "generatedAt": "2026-11-19T08:46:19.872Z",
+  "transactions": [
+    {
+      "label": "Fund exchange ETH backing",
+      "transactionHash": "0xfe8757363de144f48b74e879c0d14b676dce5570317c02c81232cafb32107a69",
+      "blockNumber": 4,
+      "gasUsed": "22491"
+    },
+    {
+      "label": "Seed exchange LRT inventory",
+      "transactionHash": "0x78c7a697b643b576c1dca1bdcd83e574ca9daa1954bca28af3352f8c3632d328",
+      "blockNumber": 5,
+      "gasUsed": "51638"
+    },
+    {
+      "label": "Create tournament",
+      "transactionHash": "0x25520a6c1359d597e9130358eb4a5994e0828af171eeb706af14b351d257a4e1",
+      "blockNumber": 6,
+      "gasUsed": "259323"
+    },
+    {
+      "label": "Approve organizer prize",
+      "transactionHash": "0x96e40c6c7492dcc9a9b6a612055c05c77bb836c4abe6c7c4fcdce21c5247283b",
+      "blockNumber": 7,
+      "gasUsed": "46379"
+    },
+    {
+      "label": "Fund prize and open registration",
+      "transactionHash": "0xe19ee7712fdbb1babd028e7f659d94643f5346c4c0c0ea5f2dac946880164c7a",
+      "blockNumber": 8,
+      "gasUsed": "117595"
+    },
+    {
+      "label": "Register player 1",
+      "transactionHash": "0x9ae30778eafa182c539902d2eba616ed90fbf8f13ef32c013af7329e5ee51588",
+      "blockNumber": 9,
+      "gasUsed": "126083"
+    },
+    {
+      "label": "Register player 2",
+      "transactionHash": "0xcfb38cdd5e3e44e687620d4f23f48fd3b2bfc6edd4318326d83f2fcb355cc0b4",
+      "blockNumber": 10,
+      "gasUsed": "74783"
+    },
+    {
+      "label": "Register player 3",
+      "transactionHash": "0x18009540f1363747df85f294157cb02ab2ef8bb4cd1a113d7605e8604d4805ef",
+      "blockNumber": 11,
+      "gasUsed": "74783"
+    },
+    {
+      "label": "Lock roster",
+      "transactionHash": "0xd8921acbca6d4893ca6d9bd5fbd746c22659800be4d29685dfa895248c8275fd",
+      "blockNumber": 13,
+      "gasUsed": "36914"
+    },
+    {
+      "label": "Referee submits ranking",
+      "transactionHash": "0x7ed7ea262772dd0cc66f83c34a319f588e3b7dbbc497388758fd153e5c9feb60",
+      "blockNumber": 14,
+      "gasUsed": "167189"
+    },
+    {
+      "label": "Player objects",
+      "transactionHash": "0x372235b505e5a7d65dc195486538d08c744d159d1dc73739132b653d31ef07c0",
+      "blockNumber": 15,
+      "gasUsed": "41090"
+    },
+    {
+      "label": "Resolver replaces ranking",
+      "transactionHash": "0xe8a6159e452d8dc2d4df6c64e2ce4b71de1da1f1a95fa70dce234f3fb4cce1b7",
+      "blockNumber": 16,
+      "gasUsed": "169049"
+    },
+    {
+      "label": "Player 1 withdraws LRT prize",
+      "transactionHash": "0x04dae368920c55b45a0b45072389f7a4c1372899d04c9b18153a26ccc41586fe",
+      "blockNumber": 17,
+      "gasUsed": "65073"
+    },
+    {
+      "label": "Player 2 withdraws LRT prize",
+      "transactionHash": "0x8921a5ac9be970ec8fedfd1e2c4158ad7c8582b5e0c91590e7e3f9b68e493a50",
+      "blockNumber": 18,
+      "gasUsed": "65073"
+    },
+    {
+      "label": "Player 3 withdraws LRT prize",
+      "transactionHash": "0x651eebc6e9dfdae9f630ba91a64e85a03e0ac4f85f2c51ad2ed2b3b72b3027ce",
+      "blockNumber": 19,
+      "gasUsed": "58139"
+    },
+    {
+      "label": "Organizer withdraws registration fees",
+      "transactionHash": "0xb2b2e814e6cf66b9dc94eafeee61dfb91c2259c315072a07a1aed4ab2dcc913f",
+      "blockNumber": 20,
+      "gasUsed": "36897"
+    },
+    {
+      "label": "Winner approves redemption",
+      "transactionHash": "0x3b06c08c33ee1325337237cc45ecbd9e8a25e44be29cd2b1426ac648be336351",
+      "blockNumber": 21,
+      "gasUsed": "46379"
+    },
+    {
+      "label": "Winner redeems 500 LRT",
+      "transactionHash": "0xb3ded064233c65fc46b0fa9cf8fc1627e5677e0b783bd324bc419e86dff17d77",
+      "blockNumber": 22,
+      "gasUsed": "82504"
+    },
+    {
+      "label": "Winner withdraws redemption ETH",
+      "transactionHash": "0xea07127134603c6694f956ed8cfefc6c25b2cec793c03462f9813f57109b20d8",
+      "blockNumber": 23,
+      "gasUsed": "36912"
+    },
+    {
+      "label": "Create cancellation example",
+      "transactionHash": "0x50fcdaee4a89bb5bb3abbc7a892d85367c1f519976591cb28fdd71123d475c70",
+      "blockNumber": 24,
+      "gasUsed": "242223"
+    },
+    {
+      "label": "Approve second prize",
+      "transactionHash": "0x1f9aa3caeadc1910fcf175b55cd8ee868f6588551f40bdf00726e51accca3ff0",
+      "blockNumber": 25,
+      "gasUsed": "46379"
+    },
+    {
+      "label": "Open second tournament",
+      "transactionHash": "0xe3a4d9d6646dc8ceff9664c0a0b41c6062e0a1a72ab9c4acef61fe7bcc55e0b3",
+      "blockNumber": 26,
+      "gasUsed": "117595"
+    },
+    {
+      "label": "Register refundable player",
+      "transactionHash": "0x5d88164fa2e8dba2c877608dfa8aa4352f26179489ccf5bebda12f91c62ba08c",
+      "blockNumber": 27,
+      "gasUsed": "126083"
+    },
+    {
+      "label": "Cancel second tournament",
+      "transactionHash": "0x60c29315fa96bae08cd856ad3458c47f49dd4391d5b7d8cef210d9d875cea89f",
+      "blockNumber": 28,
+      "gasUsed": "32497"
+    },
+    {
+      "label": "Credit player refund",
+      "transactionHash": "0x0dbd398af11d54490709536a38765ef8e0c5ac482415e347f130dc8d7c4fa7b5",
+      "blockNumber": 29,
+      "gasUsed": "77090"
+    },
+    {
+      "label": "Withdraw player refund",
+      "transactionHash": "0x2a63b23f6ca13ae91bbd4712b21cace733b9df1d6a5ca0d95d6bbbd9d4b5e296",
+      "blockNumber": 30,
+      "gasUsed": "36897"
+    },
+    {
+      "label": "Return organizer prize",
+      "transactionHash": "0xecf79978cc50294e81a3f11768d1f3207a5e1a3b871bbbe9ded59863f3362281",
+      "blockNumber": 31,
+      "gasUsed": "70597"
+    }
+  ],
+  "checks": {
+    "tournament1State": 5,
+    "tournament2State": 6,
+    "vaultETHLiability": "0",
+    "vaultLRTLiability": "0",
+    "exchangeCredits": "0",
+    "totalSupply": "1000000000000000000000000",
+    "exchangeInventory": "10500000000000000000000",
+    "player1LRT": "200000000000000000000",
+    "player2LRT": "300000000000000000000",
+    "player3LRTAfterRedemption": "0",
+    "redeemedETH": "0.0000005"
+  }
+}

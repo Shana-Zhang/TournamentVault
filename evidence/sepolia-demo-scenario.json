@@ -1,0 +1,30 @@
+{
+  "network": "Sepolia",
+  "chainId": 11155111,
+  "tournamentId": "3",
+  "purpose": "Scripted coursework demonstration; no real esports match result is asserted.",
+  "initialRanking": [
+    "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+    "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+    "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
+  ],
+  "initialEvidence": "CSIT5760 scripted Sepolia demonstration: initial ranking Player1 > Player2 > Player3. No real esports match is asserted.",
+  "objectionEvidence": "CSIT5760 scripted demonstration objection: request review of first and second place; proposed correction Player2 > Player1 > Player3.",
+  "resolvedRanking": [
+    "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+    "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+    "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
+  ],
+  "resolutionEvidence": "CSIT5760 scripted Sepolia demonstration resolution: corrected ranking Player2 > Player1 > Player3, shares 50/30/20 percent.",
+  "plannedFinalPrizesLRT": {
+    "account5": "500",
+    "account4": "300",
+    "account6": "200"
+  },
+  "status": "Completed on Sepolia: corrected resolver settlement, all prize withdrawals, organizer fees and exchange round trip confirmed; final snapshot evidence/sepolia-tournament-demo.json.",
+  "evidenceHashes": {
+    "initial": "0x26165d78e0d433f0f60eacb415ed7c91c35ceef2b28b225e751416a9a8b0d8a7",
+    "objection": "0x57b97d3d1640294433aa8f102c60ee9479aeaa8a03075c6ee6657cdbf99dece8",
+    "resolution": "0x84f38e80b44515844f56ab2459aee67d6abe3700dd439e9e62018b595c685241"
+  }
+}

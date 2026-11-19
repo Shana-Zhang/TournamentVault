@@ -1,0 +1,142 @@
+
+> tournament-vault@1.0.0 check
+> npm run compile && npm test && npm run analyze
+
+
+> tournament-vault@1.0.0 compile
+> hardhat compile
+
+Compiled 19 Solidity files successfully (evm target: cancun).
+
+> tournament-vault@1.0.0 test
+> hardhat test
+
+
+
+  Fixed supply
+    √ T01: Mint the supply once to treasury (797ms)
+    √ T02: Reject invalid treasury and zero supply (43ms)
+    √ T03: Reject token addresses without contract code (49ms)
+
+  Creation and registration
+    √ V01: Create immutable rules and distinct roles
+    √ V02: Reject zero and overlapping roles
+    √ V03: Reject malformed prize shares and capacity
+    √ V04: Reject invalid deadlines and objection windows
+    √ V05: Require organizer approval and full LRT funding
+    √ V06: Reject opening after registration deadline
+    √ V07: Register exact fee and preserve escrow (71ms)
+    √ V08: Reject wrong fees and duplicate registration
+    √ V09: Exclude privileged roles from playing
+    √ V10: Enforce exact maximum capacity (66ms)
+    √ V11: Enforce registration deadline boundary
+    √ V12: Lock at close and reject early or repeated locking (61ms)
+    √ V13: Cancel automatically when too few players register
+    √ V14: Permit a zero entry fee
+
+  Results and disputes
+    √ R01: Only referee can submit one ranked result (74ms)
+    √ R02: Reject invalid ranking and empty evidence
+    √ R03: Reject result at its exact deadline
+    √ R04: Do not submit or claim prizes before the proper state (69ms)
+    √ R05: Finalize only when objection window closes (73ms)
+    √ R06: Only registered players can raise a nonempty objection
+    √ R07: Reject objection exactly at the closing timestamp
+    √ R08: Block ordinary finalization while a dispute is unresolved (72ms)
+    √ R09: Resolver replaces ranking and settles once
+    √ R10: Resolver can confirm the original ranking
+    √ R11: Expired resolver cannot race timeout cancellation
+
+  Settlement, refunds and accounting
+    √ F01: Allocate token prizes and organizer fees separately (110ms)
+    √ F02: Reject repeated prize and fee withdrawals
+    √ F03: Reject zero recipients and unauthorized claims
+    √ F04: Cancel and recover exact player fees and organizer tokens (87ms)
+    √ F05: Reject duplicate or unauthorized cancellation refunds
+    √ F06: Permit organizer cancellation in every nonterminal state (297ms)
+    √ F07: Reject cancellation or timeout after finalization (76ms)
+    √ F08: Recover abandoned drafts and result submissions (119ms)
+    √ F09: Assign rounding remainder to final rank
+    √ F10: Isolate liabilities across multiple tournaments (108ms)
+    √ F11: Rejected ETH delivery restores credit and allows another recipient (70ms)
+    √ F12: Block a refund receiver reentering its ETH withdrawal (70ms)
+    √ F13: Settle the maximum 32-rank result within the gas limit (632ms)
+    √ F14: Preserve liabilities when balances include unsolicited surplus (78ms)
+
+  Fixed-rate exchange
+    √ X01: Quote the chosen rate exactly
+    √ X02: Reject zero and unrepresentable redemption amounts
+    √ X03: Sell inventory for ETH at the fixed price (66ms)
+    √ X04: Reject empty buys and inventory overdraw
+    √ X05: Redeem LRT without burning and withdraw exact ETH (74ms)
+    √ X06: Reject insufficient ETH backing
+    √ X07: Rollback reserved credit when token transfer fails (63ms)
+    √ X08: Do not reuse ETH already promised to another seller
+    √ X09: Reject duplicate withdrawals and zero recipients (65ms)
+    √ X10: Restore redemption credit after rejected ETH payment
+    √ X11: Block reentrant exchange withdrawal
+    √ X12: Support buy and redeem round trips without value creation
+
+  Local interface server
+    √ W01: Serve the interface and bundled script (71ms)
+    √ W02: Reject requests for private configuration and project files
+    √ W03: Reject mutation methods on the static server
+
+
+  57 passing (4s)
+
+
+> tournament-vault@1.0.0 analyze
+> node scripts/analyze.js
+
+Compiler: 0.8.26+commit.8a97fa7a.Emscripten.clang; project AST nodes: 1888; compiler errors: 0
+LRTExchange: 2513 runtime bytes (limit 24576)
+LearningRewardToken: 1764 runtime bytes (limit 24576)
+TournamentVault: 11804 runtime bytes (limit 24576)
+Findings: {"Review":19}. Review items require the manual analysis in audit/security-review.md.
+
+> tournament-vault@1.0.0 demo
+> hardhat run scripts/demo.js
+
+Deployed on hardhat (chain 31337)
+LearningRewardToken: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+TournamentVault: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+LRTExchange: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+Fund exchange ETH backing: 0xfe8757363de144f48b74e879c0d14b676dce5570317c02c81232cafb32107a69
+Seed exchange LRT inventory: 0x78c7a697b643b576c1dca1bdcd83e574ca9daa1954bca28af3352f8c3632d328
+Create tournament: 0x25520a6c1359d597e9130358eb4a5994e0828af171eeb706af14b351d257a4e1
+Approve organizer prize: 0x96e40c6c7492dcc9a9b6a612055c05c77bb836c4abe6c7c4fcdce21c5247283b
+Fund prize and open registration: 0xe19ee7712fdbb1babd028e7f659d94643f5346c4c0c0ea5f2dac946880164c7a
+Register player 1: 0x9ae30778eafa182c539902d2eba616ed90fbf8f13ef32c013af7329e5ee51588
+Register player 2: 0xcfb38cdd5e3e44e687620d4f23f48fd3b2bfc6edd4318326d83f2fcb355cc0b4
+Register player 3: 0x18009540f1363747df85f294157cb02ab2ef8bb4cd1a113d7605e8604d4805ef
+Lock roster: 0xd8921acbca6d4893ca6d9bd5fbd746c22659800be4d29685dfa895248c8275fd
+Referee submits ranking: 0x7ed7ea262772dd0cc66f83c34a319f588e3b7dbbc497388758fd153e5c9feb60
+Player objects: 0x372235b505e5a7d65dc195486538d08c744d159d1dc73739132b653d31ef07c0
+Resolver replaces ranking: 0xe8a6159e452d8dc2d4df6c64e2ce4b71de1da1f1a95fa70dce234f3fb4cce1b7
+Player 1 withdraws LRT prize: 0x04dae368920c55b45a0b45072389f7a4c1372899d04c9b18153a26ccc41586fe
+Player 2 withdraws LRT prize: 0x8921a5ac9be970ec8fedfd1e2c4158ad7c8582b5e0c91590e7e3f9b68e493a50
+Player 3 withdraws LRT prize: 0x651eebc6e9dfdae9f630ba91a64e85a03e0ac4f85f2c51ad2ed2b3b72b3027ce
+Organizer withdraws registration fees: 0xb2b2e814e6cf66b9dc94eafeee61dfb91c2259c315072a07a1aed4ab2dcc913f
+Winner approves redemption: 0x3b06c08c33ee1325337237cc45ecbd9e8a25e44be29cd2b1426ac648be336351
+Winner redeems 500 LRT: 0xb3ded064233c65fc46b0fa9cf8fc1627e5677e0b783bd324bc419e86dff17d77
+Winner withdraws redemption ETH: 0xea07127134603c6694f956ed8cfefc6c25b2cec793c03462f9813f57109b20d8
+Create cancellation example: 0x50fcdaee4a89bb5bb3abbc7a892d85367c1f519976591cb28fdd71123d475c70
+Approve second prize: 0x1f9aa3caeadc1910fcf175b55cd8ee868f6588551f40bdf00726e51accca3ff0
+Open second tournament: 0xe3a4d9d6646dc8ceff9664c0a0b41c6062e0a1a72ab9c4acef61fe7bcc55e0b3
+Register refundable player: 0x5d88164fa2e8dba2c877608dfa8aa4352f26179489ccf5bebda12f91c62ba08c
+Cancel second tournament: 0x60c29315fa96bae08cd856ad3458c47f49dd4391d5b7d8cef210d9d875cea89f
+Credit player refund: 0x0dbd398af11d54490709536a38765ef8e0c5ac482415e347f130dc8d7c4fa7b5
+Withdraw player refund: 0x2a63b23f6ca13ae91bbd4712b21cace733b9df1d6a5ca0d95d6bbbd9d4b5e296
+Return organizer prize: 0xecf79978cc50294e81a3f11768d1f3207a5e1a3b871bbbe9ded59863f3362281
+Demo verified: dispute resolution, token prizes, fee settlement, redemption and cancellation refunds.
+
+> tournament-vault@1.0.0 ui:sepolia
+> npm run compile && node scripts/configure-ui.js
+
+
+> tournament-vault@1.0.0 compile
+> hardhat compile
+
+Nothing to compile
+Existing Sepolia interface configured. No deployment or transaction was sent.

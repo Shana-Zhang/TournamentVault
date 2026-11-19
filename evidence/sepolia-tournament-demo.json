@@ -1,0 +1,544 @@
+{
+  "checkedAt": "2026-11-19T08:05:08.066Z",
+  "chainId": 11155111,
+  "block": 12167151,
+  "tournamentCount": "3",
+  "tournaments": [
+    {
+      "id": "1",
+      "state": "Cancelled",
+      "players": "0",
+      "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "prizeLRT": "1000.0",
+      "feeETH": "0.001",
+      "registrationDeadline": "1795074300",
+      "resultDeadline": "1795081500",
+      "disputeDeadline": "0",
+      "resolutionDeadline": "0"
+    },
+    {
+      "id": "2",
+      "state": "Cancelled",
+      "players": "0",
+      "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "prizeLRT": "1000.0",
+      "feeETH": "0.001",
+      "registrationDeadline": "1795074300",
+      "resultDeadline": "1795081500",
+      "disputeDeadline": "0",
+      "resolutionDeadline": "0"
+    },
+    {
+      "id": "3",
+      "state": "Finalized",
+      "players": "3",
+      "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "prizeLRT": "1000.0",
+      "feeETH": "0.001",
+      "registrationDeadline": "1795074300",
+      "resultDeadline": "1795081500",
+      "disputeDeadline": "1795074648",
+      "resolutionDeadline": "1795075176"
+    }
+  ],
+  "players": [
+    {
+      "account": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+      "registeredIn3": true,
+      "prizeCreditLRT": "0.0",
+      "tokenBalanceLRT": "300.0",
+      "ethBalance": "0.008039339990555677",
+      "vaultCreditETH": "0.0"
+    },
+    {
+      "account": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "registeredIn3": true,
+      "prizeCreditLRT": "0.0",
+      "tokenBalanceLRT": "500.0",
+      "ethBalance": "0.00771640798716408",
+      "vaultCreditETH": "0.0"
+    },
+    {
+      "account": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+      "registeredIn3": true,
+      "prizeCreditLRT": "0.0",
+      "tokenBalanceLRT": "200.0",
+      "ethBalance": "0.008428487994382505",
+      "vaultCreditETH": "0.0"
+    }
+  ],
+  "organizerCreditETH": "0.0",
+  "exchange": {
+    "address": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+    "inventoryLRT": "10000.0",
+    "availableReserveETH": "0.001",
+    "balanceETH": "0.001",
+    "account5CreditETH": "0.0"
+  },
+  "vaultLRT": "0.0",
+  "vaultETH": "0.0",
+  "events": [
+    {
+      "contract": "TournamentVault",
+      "event": "TournamentCreated",
+      "args": {
+        "id": "1",
+        "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+        "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f"
+      },
+      "hash": "0x96920f124fcda47ea5b0312dea1165ab4fc3329bb96d8ff1ced5cfd4f27f401a",
+      "block": 12166923,
+      "index": 20
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "TournamentCreated",
+      "args": {
+        "id": "2",
+        "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+        "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f"
+      },
+      "hash": "0x07e28159f8939c93eb36c9f46f643fb421f986f531f19013cfcc4d5943f6ccdd",
+      "block": 12166923,
+      "index": 21
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "TournamentCreated",
+      "args": {
+        "id": "3",
+        "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+        "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f"
+      },
+      "hash": "0x735039bb33d161ecdec14c1790bb93959d867524316fe20881f689c940c5e522",
+      "block": 12166923,
+      "index": 22
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "RegistrationOpened",
+      "args": {
+        "id": "3",
+        "prize": "1000000000000000000000"
+      },
+      "hash": "0xee0941e1bfa8180087c0021c6634a76902abe2b4208a70af592569b6592274dc",
+      "block": 12166930,
+      "index": 1
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "PlayerRegistered",
+      "args": {
+        "id": "3",
+        "player": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+        "fee": "1000000000000000"
+      },
+      "hash": "0xf2117fc71b5fe702024fc9035cea904fbf01e5f810c0fcc54d5ec210c9f8319d",
+      "block": 12166985,
+      "index": 1
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "PlayerRegistered",
+      "args": {
+        "id": "3",
+        "player": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "fee": "1000000000000000"
+      },
+      "hash": "0x44914dec9634ff4e5f7279b33aa9e88471767c0f51ddb3d4dc27736c91736a49",
+      "block": 12167020,
+      "index": 5
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "PlayerRegistered",
+      "args": {
+        "id": "3",
+        "player": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+        "fee": "1000000000000000"
+      },
+      "hash": "0xbd695d00e60828d21d41527a0a0e5ab7348ca515d40a72bd63152d60bf799c08",
+      "block": 12167028,
+      "index": 19
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "RegistrationLocked",
+      "args": {
+        "id": "3",
+        "players": "3"
+      },
+      "hash": "0x656c958368ef993f668cd511c021e408934c14a3aba5d74b675cdb009fbb7c7b",
+      "block": 12167067,
+      "index": 241
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "ResultSubmitted",
+      "args": {
+        "id": "3",
+        "winners": [
+          "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+          "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+          "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
+        ],
+        "evidenceHash": "0x26165d78e0d433f0f60eacb415ed7c91c35ceef2b28b225e751416a9a8b0d8a7",
+        "disputeDeadline": "1795074648"
+      },
+      "hash": "0x9559bee03bdf3aee41a009a8dee2a85554569cda6e2b1752cf3581f0bdf3cbf7",
+      "block": 12167074,
+      "index": 3
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "DisputeRaised",
+      "args": {
+        "id": "3",
+        "player": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+        "reasonHash": "0x57b97d3d1640294433aa8f102c60ee9479aeaa8a03075c6ee6657cdbf99dece8"
+      },
+      "hash": "0xbc251b50beeec7a8ef601f42b1530aaf2b3289f00d0734cee49b4478301c7307",
+      "block": 12167078,
+      "index": 29
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "DisputeResolved",
+      "args": {
+        "id": "3",
+        "evidenceHash": "0x84f38e80b44515844f56ab2459aee67d6abe3700dd439e9e62018b595c685241"
+      },
+      "hash": "0x3f99abcb8874f545ad9268e736ff6f4df84fe222847579a3f042c45b11b5a7ce",
+      "block": 12167084,
+      "index": 0
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "Finalized",
+      "args": {
+        "id": "3"
+      },
+      "hash": "0x3f99abcb8874f545ad9268e736ff6f4df84fe222847579a3f042c45b11b5a7ce",
+      "block": 12167084,
+      "index": 1
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "PrizeWithdrawn",
+      "args": {
+        "id": "3",
+        "player": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "recipient": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "amount": "500000000000000000000"
+      },
+      "hash": "0xba8f533bd99ee5d191c703a7ba09eaecbf7690892702e3445567e77cb15969b6",
+      "block": 12167089,
+      "index": 1
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "PrizeWithdrawn",
+      "args": {
+        "id": "3",
+        "player": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+        "recipient": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+        "amount": "300000000000000000000"
+      },
+      "hash": "0x0e0c42b556a485ca6355b90e9505c2bd05853156e934e0d6aaba59e0c47f1bdc",
+      "block": 12167097,
+      "index": 2
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "PrizeWithdrawn",
+      "args": {
+        "id": "3",
+        "player": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+        "recipient": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+        "amount": "200000000000000000000"
+      },
+      "hash": "0x5a13a71e9693cb3845de872c93f37da8a8520e4267564748054430b158bcda69",
+      "block": 12167101,
+      "index": 42
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "ETHWithdrawn",
+      "args": {
+        "account": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "recipient": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "amount": "3000000000000000"
+      },
+      "hash": "0x0468282b635120900bc459fe3ecd8c5f6df9d2ed6cf3af2bc7d0a23eebfecf4e",
+      "block": 12167119,
+      "index": 3
+    },
+    {
+      "contract": "LRTExchange",
+      "event": "Purchased",
+      "args": {
+        "buyer": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "ethAmount": "500000000000",
+        "tokenAmount": "500000000000000000000"
+      },
+      "hash": "0xc814fb1515b1ac5cc2cc1d326d9b4d881f05f0f8115f66cc1a325167d5e3389b",
+      "block": 12167124,
+      "index": 5
+    },
+    {
+      "contract": "LRTExchange",
+      "event": "Redeemed",
+      "args": {
+        "seller": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "tokenAmount": "500000000000000000000",
+        "ethAmount": "500000000000"
+      },
+      "hash": "0xeae0fa53944c02ca03b5c8d68e6c0d2c3b8c508011c16906caa2f66e139745f8",
+      "block": 12167133,
+      "index": 25
+    },
+    {
+      "contract": "LRTExchange",
+      "event": "Withdrawn",
+      "args": {
+        "account": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "recipient": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "amount": "500000000000"
+      },
+      "hash": "0x3c9c8988078528937bdef6bbd641d7e29b7e94f38634c70ae7bc54ffb1d3b90f",
+      "block": 12167137,
+      "index": 14
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "Cancelled",
+      "args": {
+        "id": "1"
+      },
+      "hash": "0x12f51891b7257d25f5d553d17a0c652257c55a20a55c0116bf2f3a97ed003a7a",
+      "block": 12167143,
+      "index": 19
+    },
+    {
+      "contract": "TournamentVault",
+      "event": "Cancelled",
+      "args": {
+        "id": "2"
+      },
+      "hash": "0x3510c73828dac841c10306e87c7179209b500e880b443c8ec077b27f193dbd0c",
+      "block": 12167148,
+      "index": 14
+    }
+  ],
+  "transactions": [
+    {
+      "hash": "0x96920f124fcda47ea5b0312dea1165ab4fc3329bb96d8ff1ced5cfd4f27f401a",
+      "status": 1,
+      "block": 12166923,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 17,
+      "valueWei": "0",
+      "gasUsed": "1133335"
+    },
+    {
+      "hash": "0x07e28159f8939c93eb36c9f46f643fb421f986f531f19013cfcc4d5943f6ccdd",
+      "status": 1,
+      "block": 12166923,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 18,
+      "valueWei": "0",
+      "gasUsed": "1035415"
+    },
+    {
+      "hash": "0x735039bb33d161ecdec14c1790bb93959d867524316fe20881f689c940c5e522",
+      "status": 1,
+      "block": 12166923,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 19,
+      "valueWei": "0",
+      "gasUsed": "1035415"
+    },
+    {
+      "hash": "0xee0941e1bfa8180087c0021c6634a76902abe2b4208a70af592569b6592274dc",
+      "status": 1,
+      "block": 12166930,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 21,
+      "valueWei": "0",
+      "gasUsed": "390839"
+    },
+    {
+      "hash": "0xf2117fc71b5fe702024fc9035cea904fbf01e5f810c0fcc54d5ec210c9f8319d",
+      "status": 1,
+      "block": 12166985,
+      "from": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 0,
+      "valueWei": "1000000000000000",
+      "gasUsed": "478163"
+    },
+    {
+      "hash": "0x44914dec9634ff4e5f7279b33aa9e88471767c0f51ddb3d4dc27736c91736a49",
+      "status": 1,
+      "block": 12167020,
+      "from": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 0,
+      "valueWei": "1000000000000000",
+      "gasUsed": "184403"
+    },
+    {
+      "hash": "0xbd695d00e60828d21d41527a0a0e5ab7348ca515d40a72bd63152d60bf799c08",
+      "status": 1,
+      "block": 12167028,
+      "from": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 0,
+      "valueWei": "1000000000000000",
+      "gasUsed": "184403"
+    },
+    {
+      "hash": "0x656c958368ef993f668cd511c021e408934c14a3aba5d74b675cdb009fbb7c7b",
+      "status": 1,
+      "block": 12167067,
+      "from": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 0,
+      "valueWei": "0",
+      "gasUsed": "38114"
+    },
+    {
+      "hash": "0x9559bee03bdf3aee41a009a8dee2a85554569cda6e2b1752cf3581f0bdf3cbf7",
+      "status": 1,
+      "block": 12167074,
+      "from": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 1,
+      "valueWei": "0",
+      "gasUsed": "615589"
+    },
+    {
+      "hash": "0xbc251b50beeec7a8ef601f42b1530aaf2b3289f00d0734cee49b4478301c7307",
+      "status": 1,
+      "block": 12167078,
+      "from": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 1,
+      "valueWei": "0",
+      "gasUsed": "49490"
+    },
+    {
+      "hash": "0x3f99abcb8874f545ad9268e736ff6f4df84fe222847579a3f042c45b11b5a7ce",
+      "status": 1,
+      "block": 12167084,
+      "from": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 0,
+      "valueWei": "0",
+      "gasUsed": "543517"
+    },
+    {
+      "hash": "0xba8f533bd99ee5d191c703a7ba09eaecbf7690892702e3445567e77cb15969b6",
+      "status": 1,
+      "block": 12167089,
+      "from": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 1,
+      "valueWei": "0",
+      "gasUsed": "162277"
+    },
+    {
+      "hash": "0x0e0c42b556a485ca6355b90e9505c2bd05853156e934e0d6aaba59e0c47f1bdc",
+      "status": 1,
+      "block": 12167097,
+      "from": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 1,
+      "valueWei": "0",
+      "gasUsed": "162277"
+    },
+    {
+      "hash": "0x5a13a71e9693cb3845de872c93f37da8a8520e4267564748054430b158bcda69",
+      "status": 1,
+      "block": 12167101,
+      "from": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 2,
+      "valueWei": "0",
+      "gasUsed": "147115"
+    },
+    {
+      "hash": "0x0468282b635120900bc459fe3ecd8c5f6df9d2ed6cf3af2bc7d0a23eebfecf4e",
+      "status": 1,
+      "block": 12167119,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 22,
+      "valueWei": "0",
+      "gasUsed": "51217"
+    },
+    {
+      "hash": "0xc814fb1515b1ac5cc2cc1d326d9b4d881f05f0f8115f66cc1a325167d5e3389b",
+      "status": 1,
+      "block": 12167124,
+      "from": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "to": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+      "nonce": 2,
+      "valueWei": "500000000000",
+      "gasUsed": "56989"
+    },
+    {
+      "hash": "0xeae0fa53944c02ca03b5c8d68e6c0d2c3b8c508011c16906caa2f66e139745f8",
+      "status": 1,
+      "block": 12167133,
+      "from": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "to": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+      "nonce": 4,
+      "valueWei": "0",
+      "gasUsed": "272528"
+    },
+    {
+      "hash": "0x3c9c8988078528937bdef6bbd641d7e29b7e94f38634c70ae7bc54ffb1d3b90f",
+      "status": 1,
+      "block": 12167137,
+      "from": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "to": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+      "nonce": 5,
+      "valueWei": "0",
+      "gasUsed": "51232"
+    },
+    {
+      "hash": "0x12f51891b7257d25f5d553d17a0c652257c55a20a55c0116bf2f3a97ed003a7a",
+      "status": 1,
+      "block": 12167143,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 23,
+      "valueWei": "0",
+      "gasUsed": "33697"
+    },
+    {
+      "hash": "0x3510c73828dac841c10306e87c7179209b500e880b443c8ec077b27f193dbd0c",
+      "status": 1,
+      "block": 12167148,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+      "nonce": 24,
+      "valueWei": "0",
+      "gasUsed": "33697"
+    }
+  ]
+}

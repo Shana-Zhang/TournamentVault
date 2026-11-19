@@ -1,0 +1,7 @@
+{
+  "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+  "ranks": 32,
+  "submissionGas": "1158738",
+  "settlementGas": "893356",
+  "coverageInstrumented": false
+}

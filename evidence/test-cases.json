@@ -1,0 +1,518 @@
+{
+  "generatedAt": "2026-11-19T08:46:09.576Z",
+  "cases": [
+    {
+      "id": "T01",
+      "purpose": "Mint the supply once to treasury",
+      "preconditions": "Fresh deployment",
+      "input": "Deploy 1,000,000 LRT",
+      "expected": "Treasury balance and total supply match",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "T02",
+      "purpose": "Reject invalid treasury and zero supply",
+      "preconditions": "Token factory",
+      "input": "Zero treasury or zero supply",
+      "expected": "Both deployments revert",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "T03",
+      "purpose": "Reject token addresses without contract code",
+      "preconditions": "Vault and exchange factories",
+      "input": "Deploy with zero or EOA token",
+      "expected": "Deployments revert",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V01",
+      "purpose": "Create immutable rules and distinct roles",
+      "preconditions": "Draft fixture",
+      "input": "Read tournament 1 and unknown ids",
+      "expected": "Exact rules; unknown ids revert; no rule setter",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V02",
+      "purpose": "Reject zero and overlapping roles",
+      "preconditions": "Draft fixture",
+      "input": "Zero role; organizer/referee/resolver overlap",
+      "expected": "Creation reverts",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V03",
+      "purpose": "Reject malformed prize shares and capacity",
+      "preconditions": "Draft fixture",
+      "input": "Zero prize, empty/33/zero shares, wrong sum, capacity < ranks or >256",
+      "expected": "Creation reverts for every invalid variant",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V04",
+      "purpose": "Reject invalid deadlines and objection windows",
+      "preconditions": "Draft fixture",
+      "input": "Past deadline; result before close; windows outside 60s..7d",
+      "expected": "All invalid values revert",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V05",
+      "purpose": "Require organizer approval and full LRT funding",
+      "preconditions": "Unfunded draft",
+      "input": "Unauthorized, unapproved, then approved fundAndOpen",
+      "expected": "Unauthorized/unapproved fail; exact token escrow opens",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V06",
+      "purpose": "Reject opening after registration deadline",
+      "preconditions": "Approved draft at close",
+      "input": "fundAndOpen at deadline",
+      "expected": "Registration closed",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V07",
+      "purpose": "Register exact fee and preserve escrow",
+      "preconditions": "Open tournament",
+      "input": "Player pays exact fee",
+      "expected": "Event, roster and ETH liability match",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V08",
+      "purpose": "Reject wrong fees and duplicate registration",
+      "preconditions": "Open tournament",
+      "input": "Pay fee +/-1 wei; register twice",
+      "expected": "Wrong fee and Already registered reverts",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V09",
+      "purpose": "Exclude privileged roles from playing",
+      "preconditions": "Open tournament",
+      "input": "Organizer, referee, resolver register",
+      "expected": "Role cannot play",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V10",
+      "purpose": "Enforce exact maximum capacity",
+      "preconditions": "Three players enrolled; max=3",
+      "input": "Fourth player registers",
+      "expected": "Full; roster remains three",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V11",
+      "purpose": "Enforce registration deadline boundary",
+      "preconditions": "Open tournament",
+      "input": "Register at close-1 then exactly close",
+      "expected": "First succeeds; second reverts",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V12",
+      "purpose": "Lock at close and reject early or repeated locking",
+      "preconditions": "Enrolled tournament",
+      "input": "Lock before/at/after close",
+      "expected": "Early and repeat revert; exact close emits Locked",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V13",
+      "purpose": "Cancel automatically when too few players register",
+      "preconditions": "Open with one player and three prize ranks",
+      "input": "Lock after close",
+      "expected": "Cancelled with recoverable prize and fee",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "V14",
+      "purpose": "Permit a zero entry fee",
+      "preconditions": "New free tournament",
+      "input": "Open and register with zero ETH",
+      "expected": "Registration succeeds without ETH liability",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R01",
+      "purpose": "Only referee can submit one ranked result",
+      "preconditions": "Locked tournament",
+      "input": "Unauthorized then referee then repeat submission",
+      "expected": "Only valid submission succeeds and emits evidence",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R02",
+      "purpose": "Reject invalid ranking and empty evidence",
+      "preconditions": "Locked tournament",
+      "input": "Empty, duplicate, outsider rankings; zero hash",
+      "expected": "Each invalid result reverts",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R03",
+      "purpose": "Reject result at its exact deadline",
+      "preconditions": "Locked tournament",
+      "input": "Submit at resultDeadline",
+      "expected": "Result expired",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R04",
+      "purpose": "Do not submit or claim prizes before the proper state",
+      "preconditions": "Open tournament",
+      "input": "Submit, finalize, prize/refund withdrawal before settlement",
+      "expected": "All calls revert",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R05",
+      "purpose": "Finalize only when objection window closes",
+      "preconditions": "Pending result",
+      "input": "Finalize before then at disputeDeadline",
+      "expected": "Too early then Finalized",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R06",
+      "purpose": "Only registered players can raise a nonempty objection",
+      "preconditions": "Pending result",
+      "input": "Outsider dispute; zero reason; valid dispute; repeat",
+      "expected": "Invalid calls revert; valid objection opens dispute once",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R07",
+      "purpose": "Reject objection exactly at the closing timestamp",
+      "preconditions": "Pending result",
+      "input": "Dispute at disputeDeadline",
+      "expected": "Dispute closed",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R08",
+      "purpose": "Block ordinary finalization while a dispute is unresolved",
+      "preconditions": "Disputed result",
+      "input": "Wait past objection window and finalize",
+      "expected": "Wrong state; no credits",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R09",
+      "purpose": "Resolver replaces ranking and settles once",
+      "preconditions": "Disputed result",
+      "input": "Wrong caller, valid replacement, duplicate resolution",
+      "expected": "Only resolver succeeds; replacement earns first prize",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R10",
+      "purpose": "Resolver can confirm the original ranking",
+      "preconditions": "Disputed result",
+      "input": "Resolve with original winners",
+      "expected": "Original first-place credit preserved",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "R11",
+      "purpose": "Expired resolver cannot race timeout cancellation",
+      "preconditions": "Disputed result",
+      "input": "Resolve then cancel at resolutionDeadline",
+      "expected": "Resolution expired; anyone cancels",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F01",
+      "purpose": "Allocate token prizes and organizer fees separately",
+      "preconditions": "Finalized tournament",
+      "input": "Inspect 50/30/20 credits and withdraw all",
+      "expected": "1000 LRT paid to winners; three ETH fees to organizer; liabilities zero",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F02",
+      "purpose": "Reject repeated prize and fee withdrawals",
+      "preconditions": "Finalized tournament",
+      "input": "Withdraw prize/ETH twice and finalize twice",
+      "expected": "Second claims and finalization revert",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F03",
+      "purpose": "Reject zero recipients and unauthorized claims",
+      "preconditions": "Finalized tournament",
+      "input": "Zero recipient; outsider prize or fee claim",
+      "expected": "No credits change",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F04",
+      "purpose": "Cancel and recover exact player fees and organizer tokens",
+      "preconditions": "Three enrolled players",
+      "input": "Cancel; claim and withdraw refunds; return prize",
+      "expected": "Original deposits restored; no winner credits; zero liabilities",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F05",
+      "purpose": "Reject duplicate or unauthorized cancellation refunds",
+      "preconditions": "Cancelled enrolled tournament",
+      "input": "Double refunds; outsider/zero recipients; repeat cancellation",
+      "expected": "All invalid claims revert",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F06",
+      "purpose": "Permit organizer cancellation in every nonterminal state",
+      "preconditions": "Draft/open/locked/pending/disputed fixtures",
+      "input": "Organizer cancels; outsider attempts",
+      "expected": "Only organizer cancels; funded prize recoverable",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F07",
+      "purpose": "Reject cancellation or timeout after finalization",
+      "preconditions": "Finalized tournament",
+      "input": "cancelTournament and cancelExpired",
+      "expected": "Terminal state and Not expired",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F08",
+      "purpose": "Recover abandoned drafts and result submissions",
+      "preconditions": "Draft/open/locked fixtures",
+      "input": "Cancel too early then at relevant deadline",
+      "expected": "Early call rejected; timeout emits cancellation",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F09",
+      "purpose": "Assign rounding remainder to final rank",
+      "preconditions": "Prize=10001 base units; shares 50/30/20",
+      "input": "Fund, enroll, submit and settle",
+      "expected": "Credits 5000+3000+2001 exactly equal escrow",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F10",
+      "purpose": "Isolate liabilities across multiple tournaments",
+      "preconditions": "Two funded tournaments share players",
+      "input": "Cancel one, settle other, withdraw both",
+      "expected": "Refunds and prizes remain distinct; all liabilities clear",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F11",
+      "purpose": "Rejected ETH delivery restores credit and allows another recipient",
+      "preconditions": "Organizer ETH credit; receiver rejects",
+      "input": "Withdraw to rejecting contract then EOA",
+      "expected": "Failure rolls back; alternate withdrawal succeeds",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F12",
+      "purpose": "Block a refund receiver reentering its ETH withdrawal",
+      "preconditions": "Contract player in cancelled tournament",
+      "input": "Refund to receiver with recursive withdrawal payload",
+      "expected": "One payment; recursive call fails; liability zero",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F13",
+      "purpose": "Settle the maximum 32-rank result within the gas limit",
+      "preconditions": "32 funded and registered distinct players",
+      "input": "Submit 32 unique ranked winners; settle and withdraw all",
+      "expected": "Submission and settlement each under 8M gas; exact prize conservation",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "F14",
+      "purpose": "Preserve liabilities when balances include unsolicited surplus",
+      "preconditions": "Finalized prize and fee credits",
+      "input": "Simulate forced ETH and donate LRT, then withdraw all obligations",
+      "expected": "Liabilities reach zero; surplus remains; balance >= liability",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X01",
+      "purpose": "Quote the chosen rate exactly",
+      "preconditions": "Exchange deployment",
+      "input": "Quote 1 and 1000 LRT",
+      "expected": "1e9 and 1e12 wei",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X02",
+      "purpose": "Reject zero and unrepresentable redemption amounts",
+      "preconditions": "Exchange deployment",
+      "input": "Quote or redeem zero, 1 base unit, 1e9+1 units",
+      "expected": "Invalid precision",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X03",
+      "purpose": "Sell inventory for ETH at the fixed price",
+      "preconditions": "Funded exchange with inventory",
+      "input": "Buy 50 LRT for 5e10 wei",
+      "expected": "Buyer gains 50 LRT and reserve increases by price",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X04",
+      "purpose": "Reject empty buys and inventory overdraw",
+      "preconditions": "Empty exchange",
+      "input": "Buy with zero or 1 wei",
+      "expected": "Zero payment or Insufficient inventory",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X05",
+      "purpose": "Redeem LRT without burning and withdraw exact ETH",
+      "preconditions": "Funded exchange; approved holder",
+      "input": "Redeem 1000 LRT then withdraw",
+      "expected": "Supply constant; inventory grows; credit paid exactly",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X06",
+      "purpose": "Reject insufficient ETH backing",
+      "preconditions": "Token holder; no exchange reserve",
+      "input": "Redeem one LRT",
+      "expected": "Insufficient reserve; tokens unchanged",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X07",
+      "purpose": "Rollback reserved credit when token transfer fails",
+      "preconditions": "Funded exchange; unapproved or tokenless holder",
+      "input": "Redeem without allowance or without balance",
+      "expected": "Reverts; credit and reserve unchanged",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X08",
+      "purpose": "Do not reuse ETH already promised to another seller",
+      "preconditions": "Reserve equals first redemption",
+      "input": "First holder reserves all ETH; second tries redeem",
+      "expected": "Second rejected; first credit remains payable",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X09",
+      "purpose": "Reject duplicate withdrawals and zero recipients",
+      "preconditions": "Holder has redemption credit",
+      "input": "Withdraw to zero; withdraw twice",
+      "expected": "Zero recipient and No credit",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X10",
+      "purpose": "Restore redemption credit after rejected ETH payment",
+      "preconditions": "Holder credit; rejecting receiver",
+      "input": "Withdraw to receiver then EOA",
+      "expected": "Credit survives failure; EOA withdrawal succeeds",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X11",
+      "purpose": "Block reentrant exchange withdrawal",
+      "preconditions": "Contract holder with redeemed LRT",
+      "input": "Withdraw with recursive payload",
+      "expected": "Only one payout; nested call fails",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "X12",
+      "purpose": "Support buy and redeem round trips without value creation",
+      "preconditions": "Funded inventory",
+      "input": "Buy then redeem 123456789 wei equivalent",
+      "expected": "Balances and supply return to original values",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "W01",
+      "purpose": "Serve the interface and bundled script",
+      "preconditions": "Local handler; no wallet",
+      "input": "GET /, /app.js, /style.css, /ethers.js",
+      "expected": "Only intended static resources returned with a restrictive content policy",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "W02",
+      "purpose": "Reject requests for private configuration and project files",
+      "preconditions": "Local handler",
+      "input": "GET .env, source files and traversal paths",
+      "expected": "404 without exposing local bytes",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    },
+    {
+      "id": "W03",
+      "purpose": "Reject mutation methods on the static server",
+      "preconditions": "Local handler",
+      "input": "POST /",
+      "expected": "404 and no file write",
+      "actual": "Assertions matched expected result",
+      "status": "Pass"
+    }
+  ]
+}

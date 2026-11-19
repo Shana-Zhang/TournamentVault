@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-19T08:49:00.592430+00:00",
+  "node": "24.15.0",
+  "npm": "11.12.1",
+  "freshInstall": "npm ci from package-lock.json",
+  "environmentFilePresent": false,
+  "testsPassed": 57,
+  "localDemoLiabilitiesZero": true,
+  "existingSepoliaBytecodeConfigurationMatches": true,
+  "productionSolidityUnchanged": true,
+  "commands": [
+    "npm ci",
+    "npm run check",
+    "npm run demo",
+    "npm run ui:sepolia"
+  ]
+}
