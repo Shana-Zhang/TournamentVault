@@ -1,0 +1,32 @@
+name: Reproduce local checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up pinned Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Compile and run 57 tests
+        run: npm run compile && npm test
+      - name: Run complete local transaction demonstration
+        run: npm run demo
+      - name: Review compiler output and project AST
+        run: npm run analyze
+      - name: Verify existing Sepolia configuration without network access
+        run: npm run ui:sepolia
