@@ -301,8 +301,11 @@ describe('Settlement, refunds and accounting', function () {
     await expect(f.vault.connect(f.outsider).withdrawPrize(1, f.outsider.address)).to.be.revertedWith('No credit');
     await expect(f.vault.connect(f.outsider).withdrawETH(f.outsider.address)).to.be.revertedWith('No credit'); await invariant(f);
   });
-  scenario('F04', 'Cancel and recover exact player fees and organizer tokens', 'Three enrolled players', 'Cancel; claim and withdraw refunds; return prize', 'Original deposits restored; no winner credits; zero liabilities', async () => {
-    const f = await loadFixture(enrolled); await f.vault.cancelTournament(1);
+  scenario('F04', 'Recover fees after an abandoned populated tournament', 'Three enrolled players', 'Organizer cancellation is rejected; anyone cancels at result deadline; claim refunds and return prize', 'Original deposits restored; no winner credits; zero liabilities', async () => {
+    const f = await loadFixture(enrolled);
+    await expect(f.vault.cancelTournament(1)).to.be.revertedWith('Players already registered');
+    await time.increaseTo(f.rules.resultDeadline);
+    await expect(f.vault.connect(f.outsider).cancelExpired(1)).to.emit(f.vault, 'Cancelled');
     for (const s of [f.a, f.b, f.c]) {
       await f.vault.connect(s).claimRefund(1);
       await expect(f.vault.connect(s).withdrawETH(s.address)).to.changeEtherBalance(s, f.rules.entryFee);
@@ -312,8 +315,8 @@ describe('Settlement, refunds and accounting', function () {
     expect(await f.vault.ethCredits(f.organizer.address)).to.equal(0);
     expect(await f.vault.ethLiability()).to.equal(0); expect(await f.vault.tokenLiability()).to.equal(0);
   });
-  scenario('F05', 'Reject duplicate or unauthorized cancellation refunds', 'Cancelled enrolled tournament', 'Double refunds; outsider/zero recipients; repeat cancellation', 'All invalid claims revert', async () => {
-    const f = await loadFixture(enrolled); await f.vault.cancelTournament(1);
+  scenario('F05', 'Reject duplicate or unauthorized cancellation refunds', 'Cancelled enrolled tournament', 'Timeout cancel; double refunds; outsider/zero recipients; repeat cancellation', 'All invalid claims revert', async () => {
+    const f = await loadFixture(enrolled); await time.increaseTo(f.rules.resultDeadline); await f.vault.cancelExpired(1);
     await f.vault.connect(f.a).claimRefund(1);
     await expect(f.vault.connect(f.a).claimRefund(1)).to.be.revertedWith('No refund');
     await expect(f.vault.connect(f.outsider).claimRefund(1)).to.be.revertedWith('No refund');
@@ -323,13 +326,19 @@ describe('Settlement, refunds and accounting', function () {
     await expect(f.vault.refundOrganizer(1, f.organizer.address)).to.be.revertedWith('No refund');
     await expect(f.vault.cancelTournament(1)).to.be.revertedWith('Terminal state');
   });
-  scenario('F06', 'Permit organizer cancellation in every nonterminal state', 'Draft/open/locked/pending/disputed fixtures', 'Organizer cancels; outsider attempts', 'Only organizer cancels; funded prize recoverable', async () => {
-    for (const setup of [fixture, opened, locked, pending, disputed]) {
+  scenario('F06', 'Limit organizer cancellation to tournaments with no entrants', 'Draft, open-empty, locked, pending and disputed fixtures', 'Organizer cancels before registration; populated states reject organizer cancellation', 'Only empty Draft/open tournaments can be cancelled by organizer; populated tournaments remain protected', async () => {
+    for (const setup of [fixture, opened]) {
       const f = await loadFixture(setup);
       await expect(f.vault.connect(f.outsider).cancelTournament(1)).to.be.revertedWith('Only organizer');
       await f.vault.cancelTournament(1); expect((await f.vault.getTournament(1)).state).to.equal(6);
       if (setup !== fixture) await f.vault.refundOrganizer(1, f.organizer.address);
       else await expect(f.vault.refundOrganizer(1, f.organizer.address)).to.be.revertedWith('No refund');
+      await invariant(f);
+    }
+    for (const setup of [locked, pending, disputed]) {
+      const f = await loadFixture(setup);
+      await expect(f.vault.connect(f.outsider).cancelTournament(1)).to.be.revertedWith('Only organizer');
+      await expect(f.vault.cancelTournament(1)).to.be.revertedWith('Players already registered');
       await invariant(f);
     }
   });
@@ -357,19 +366,18 @@ describe('Settlement, refunds and accounting', function () {
     for (const [s, amount] of [[f.a, 5000], [f.b, 3000], [f.c, 2001]]) expect(await f.vault.prizeCredits(2, s.address)).to.equal(amount);
     await invariant(f);
   });
-  scenario('F10', 'Isolate liabilities across multiple tournaments', 'Two funded tournaments share players', 'Cancel one, settle other, withdraw both', 'Refunds and prizes remain distinct; all liabilities clear', async () => {
-    const f = await loadFixture(enrolled);
+  scenario('F10', 'Isolate liabilities across multiple tournaments', 'One funded tournament and one empty funded tournament', 'Cancel the empty tournament; settle the populated tournament', 'Prize escrow remains isolated; all liabilities clear', async () => {
+    const f = await loadFixture(opened);
     await f.vault.createTournament(f.rules, f.referee.address, f.resolver.address, f.shares);
     await f.token.approve(f.vault.target, f.rules.prize); await f.vault.fundAndOpen(2);
-    for (const s of [f.a, f.b, f.c]) await f.vault.connect(s).register(2, { value: f.rules.entryFee });
+    for (const s of [f.a, f.b, f.c]) await f.vault.connect(s).register(1, { value: f.rules.entryFee });
     expect(await f.vault.tokenLiability()).to.equal(2n * f.rules.prize); await invariant(f);
-    await f.vault.cancelTournament(1); await f.vault.refundOrganizer(1, f.organizer.address);
-    await time.increaseTo(f.rules.registrationDeadline); await f.vault.lockRegistration(2);
-    await f.vault.connect(f.referee).submitResult(2, [f.a.address, f.b.address, f.c.address], HASH);
-    await time.increaseTo((await f.vault.getTournament(2)).disputeDeadline); await f.vault.finalizeResult(2);
+    await f.vault.cancelTournament(2); await f.vault.refundOrganizer(2, f.organizer.address);
+    await time.increaseTo(f.rules.registrationDeadline); await f.vault.lockRegistration(1);
+    await f.vault.connect(f.referee).submitResult(1, [f.a.address, f.b.address, f.c.address], HASH);
+    await time.increaseTo((await f.vault.getTournament(1)).disputeDeadline); await f.vault.finalizeResult(1);
     for (const s of [f.a, f.b, f.c]) {
-      await f.vault.connect(s).claimRefund(1); await f.vault.connect(s).withdrawETH(s.address);
-      await f.vault.connect(s).withdrawPrize(2, s.address); await invariant(f);
+      await f.vault.connect(s).withdrawPrize(1, s.address); await invariant(f);
     }
     await f.vault.withdrawETH(f.organizer.address);
     expect(await f.vault.ethLiability()).to.equal(0); expect(await f.vault.tokenLiability()).to.equal(0);
@@ -383,7 +391,7 @@ describe('Settlement, refunds and accounting', function () {
   scenario('F12', 'Block a refund receiver reentering its ETH withdrawal', 'Contract player in cancelled tournament', 'Refund to receiver with recursive withdrawal payload', 'One payment; recursive call fails; liability zero', async () => {
     const f = await loadFixture(opened);
     await f.receiver.execute(f.vault.target, f.vault.interface.encodeFunctionData('register', [1]), { value: f.rules.entryFee });
-    await f.vault.cancelTournament(1);
+    await time.increaseTo(f.rules.resultDeadline); await f.vault.cancelExpired(1);
     await f.receiver.execute(f.vault.target, f.vault.interface.encodeFunctionData('claimRefund', [1]));
     const data = f.vault.interface.encodeFunctionData('withdrawETH', [f.receiver.target]);
     await f.receiver.configure(f.vault.target, data, false);

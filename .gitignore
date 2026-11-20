@@ -6,9 +6,9 @@ coverage.json
 .env
 .env.*
 !.env.example
-.npm-cache/
+submission/
 *.log
-deployment/hardhat.json
-deployment/localhost.json
-desktop.ini
-.DS_Store
+.npm-cache/
+.local/
+.tools/
+reference/

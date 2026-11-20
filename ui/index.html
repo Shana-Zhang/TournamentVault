@@ -4,23 +4,24 @@
 <body>
 <header><a class="brand" href="/">TV<span>TournamentVault</span></a><div><button id="choose-account" class="secondary">Choose account</button> <button id="connect">Connect wallet</button></div></header>
 <main>
-<section class="hero"><p class="eyebrow">ESCROW · COMPETE · SETTLE</p><h1>Every prize.<br>Accounted for.</h1><p>Funded LRT prizes, transparent results and recoverable entry fees.</p><div class="badges"><span id="network">Wallet disconnected</span><span>1 LRT = 0.000000001 ETH</span></div></section>
+<section class="hero"><p class="eyebrow">CSIT5760 · TOURNAMENTVAULT</p><h1>Tournament<br>management</h1><p>Manage a tournament, report results or claim a prize.</p><div class="badges"><span id="network">Wallet disconnected</span><span>ETH prize escrow · optional LRT bonus</span></div></section>
 <label>Connected wallet account<select id="wallet-account" disabled><option value="">Connect wallet first</option></select></label>
 <section class="overview"><div><p>LRT balance</p><strong id="balance">—</strong></div><div><p>Vault ETH available to withdraw</p><strong id="vault-credit">—</strong></div><div><p>Exchange ETH reserve</p><strong id="reserve">—</strong></div></section>
 <p id="notice" role="status">Connect a wallet to load the deployed contracts.</p>
+<section class="card directory"><div class="section-title"><span>00</span><h2>Tournaments</h2></div><p id="directory-status" class="muted">Connect a wallet to browse recent tournaments.</p><div class="table-wrap"><table><thead><tr><th>Event</th><th>Status</th><th>Players</th><th>Prize</th><th>Organizer</th><th></th></tr></thead><tbody id="tournament-list"></tbody></table></div></section>
 <div class="layout">
-<section class="card"><div class="section-title"><span>01</span><h2>Tournament desk</h2></div>
+<section class="card"><div class="section-title"><span>01</span><h2>Tournament</h2></div><p id="role-summary" class="role-summary">Connect a wallet and load a tournament to see actions for your role.</p>
 <form id="lookup"><label>Tournament number<input id="tournament-id" type="number" min="1" value="1" required></label><button>Load tournament</button></form>
 <div id="tournament" class="details">Load a tournament to see its rules, deadlines and status.</div>
-<div class="action-grid" id="actions">
-<button data-action="open">Approve prize & open</button><button data-action="register">Register & pay fee</button>
-<button data-action="lock">Lock registration</button><button data-action="finalize">Finalize result</button>
-<button data-action="prize">Withdraw LRT prize</button><button data-action="refund">Claim fee refund</button>
-<button data-action="fees">Withdraw vault ETH</button><button data-action="organizer-refund">Return organizer prize</button>
-<button data-action="timeout">Cancel expired tournament</button><button class="danger" data-action="cancel">Cancel tournament</button>
+<div class="action-grid" id="actions" hidden>
+<button data-action="open" data-role="organizer">Approve prize & open</button><button data-action="register" data-role="eligible">Register & pay fee</button>
+<button data-action="lock" data-role="any">Lock registration</button><button data-action="finalize" data-role="any">Finalize result</button>
+<button data-action="prize" data-role="prize-credit">Withdraw prize (ETH + LRT)</button><button data-action="refund" data-role="registered">Claim fee refund</button>
+<button data-action="fees" data-role="eth-credit">Withdraw vault ETH</button><button data-action="organizer-refund" data-role="organizer">Return organizer prize</button>
+<button data-action="timeout" data-role="any">Cancel expired tournament</button><button class="danger" data-action="cancel" data-role="organizer">Cancel tournament</button>
 </div><p class="hint">Actions use the connected role. Rules are enforced by the contract. Cancellation is available to the organizer before finalization; participants then recover their deposits.</p>
 </section>
-<section class="card"><div class="section-title"><span>02</span><h2>LRT exchange</h2></div><p class="muted">Fixed price. Redeemed tokens return to inventory. Redemption depends on available ETH reserves.</p>
+<section class="card" id="exchange-card"><div class="section-title"><span>02</span><h2>LRT exchange</h2></div><p class="muted">Buy or redeem LRT at the fixed rate. Redemptions depend on available ETH reserves.</p>
 <form id="inventory-fund"><label>LRT inventory contribution<input id="inventory-amount" type="number" min="0" step="any" required></label><button>Transfer LRT to exchange inventory</button></form><p class="hint">Transfers your existing LRT to the deployed exchange. The inventory can be purchased by other users.</p>
 <form id="redeem"><label>LRT to redeem<input id="redeem-amount" type="number" min="0.000000001" step="0.000000001" placeholder="500" required></label><button>Approve & redeem LRT</button></form>
 <p id="exchange-credit" class="hint">Redemption ETH is credited before withdrawal.</p><button id="exchange-withdraw" class="wide secondary">Withdraw redemption ETH</button>
@@ -28,20 +29,20 @@
 <form id="reserve-fund"><label>ETH reserve contribution<input id="fund-amount" type="number" step="any" min="0.000000000000000001" placeholder="0.001" required></label><button class="secondary">Fund exchange reserve</button></form>
 <p class="hint">Reserve contributions are permanent backing. There is no administrator withdrawal.</p>
 </section>
-<section class="card"><div class="section-title"><span>03</span><h2>Create a tournament</h2></div><form id="create" class="form-grid">
+<section class="card" id="create-card"><div class="section-title"><span>03</span><h2>New tournament</h2></div><form id="create" class="form-grid">
 <label>Referee address<input name="referee" required placeholder="0x…"></label><label>Resolver address<input name="resolver" required placeholder="0x…"></label>
-<label>Prize in LRT<input name="prize" type="number" step="any" min="0.000000000000000001" value="1000" required></label><label>Entry fee in ETH<input name="fee" type="number" step="any" min="0" value="0.001" required></label>
+<label>Main prize in ETH<input name="ethPrize" type="number" step="any" min="0.000000000000000001" value="0.05" required></label><label>Additional LRT bonus<input name="lrtBonus" type="number" step="any" min="0" value="10000" required></label><label>Entry fee in ETH<input name="fee" type="number" step="any" min="0" value="0.001" required></label>
 <label>Maximum players<input name="capacity" type="number" min="1" max="256" value="16" required></label><label>Ranked shares (%)<input name="shares" value="50,30,20" required></label>
 <label>Registration closes<input name="registration" type="datetime-local" required></label><label>Results due<input name="result" type="datetime-local" required></label>
 <label>Objection window (minutes)<input name="objection" type="number" min="1" max="10080" value="60" required></label><label>Resolution window (minutes)<input name="resolution" type="number" min="1" max="10080" value="120" required></label>
-<button class="full">Create fixed rules</button></form><p class="hint">The connected wallet becomes the organizer. The prize is transferred when registration opens. All three role addresses must differ.</p></section>
-<section class="card"><div class="section-title"><span>04</span><h2>Results & review</h2></div><form id="results">
+<button class="full">Create fixed rules</button></form><p class="hint">The connected wallet becomes the organizer. The full ETH prize is escrowed when the tournament is created; the optional LRT bonus is transferred when registration opens. These are editable demo defaults. All three role addresses must differ.</p></section>
+<section class="card" id="results-card"><div class="section-title"><span>04</span><h2>Results & review</h2></div><form id="results" data-role="referee,resolver">
 <label>Ranked winner addresses<textarea id="winners" rows="3" placeholder="One address per line, first place first" required></textarea></label>
 <label>Evidence description or content hash<input id="evidence" placeholder="Reference to match evidence" required></label>
-<div class="action-grid"><button name="mode" value="submit">Submit as referee</button><button name="mode" value="resolve" class="secondary">Resolve as resolver</button></div></form>
-<form id="dispute"><label>Objection evidence<input id="reason" placeholder="Reference to objection evidence" required></label><button class="secondary">Raise objection as player</button></form>
+<div class="action-grid"><button name="mode" value="submit" data-role="referee">Submit result</button><button name="mode" value="resolve" class="secondary" data-role="resolver">Resolve dispute</button></div></form>
+<form id="dispute" data-role="registered"><label>Objection evidence<input id="reason" placeholder="Reference to objection evidence" required></label><button class="secondary">Raise objection</button></form>
 <p class="hint">Text is hashed in your browser. Only its hash is stored on-chain. Keep the evidence itself available off-chain. A resolver confirms the original ranking or submits a corrected one.</p>
 </section>
-</div><section class="card activity"><div class="section-title"><span>05</span><h2>Transaction activity</h2></div><ol id="activity"><li>No transactions in this session.</li></ol></section>
+</div><section class="card activity"><div class="section-title"><span>05</span><h2>Transaction activity</h2></div><ol id="activity" aria-live="polite"><li>Connect a wallet to load on-chain contract history.</li></ol><p class="hint">Shows confirmed transactions involving the project contracts for the connected account, including earlier sessions.</p></section>
 </main><footer>TournamentVault · CSIT5760 · Sepolia & local development</footer>
 </body></html>

@@ -8,7 +8,7 @@ const hashes = {};
 let nodes = 0;
 const input = { language: 'Solidity', sources: {}, settings: { optimizer: { enabled: true, runs: 200 }, evmVersion: 'cancun',
   outputSelection: { '*': { '': ['ast'], '*': ['evm.deployedBytecode.object'] } } } };
-for (const name of ['LearningRewardToken', 'TournamentVault', 'LRTExchange']) {
+for (const name of ['LearningRewardToken', 'TournamentVault', 'TournamentVaultV3', 'LRTExchange']) {
   const filename = `contracts/${name}.sol`;
   const content = fs.readFileSync(path.join(root, filename), 'utf8');
   input.sources[filename] = { content };

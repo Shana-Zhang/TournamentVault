@@ -1,0 +1,86 @@
+{
+  "network": "sepolia",
+  "chainId": "11155111",
+  "deployedAt": "2026-11-20T07:32:32.080Z",
+  "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "evmVersion": "cancun",
+  "rate": "1 LRT = 0.000000001 ETH",
+  "supply": "1000000000000000000000000",
+  "contracts": [
+    {
+      "name": "LearningRewardToken",
+      "address": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+      "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "transactionHash": "0x7b39736dcb0e869f2307cb28fa28f20b12eb94e3d9af387d7bb9404a1c6fe578",
+      "constructorArguments": [
+        "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "1000000000000000000000000"
+      ],
+      "creationBytecodeHash": "0xd3c5640a9ee525eaf377e6b04a23157c4554636b0d5e5c2739cd756da7022e8d",
+      "deploymentStatus": "Confirmed",
+      "explorer": "https://sepolia.etherscan.io/address/0x381B1b215dee83Dee9b899da0D012Fc2657750F9#code",
+      "verification": "Verified",
+      "blockNumber": 12173877,
+      "gasUsed": "3396753",
+      "verificationAttempts": [
+        {
+          "checkedAt": "2026-11-20T07:34:42.715Z",
+          "attempt": 1,
+          "outcome": "Verified"
+        }
+      ],
+      "verifiedAt": "2026-11-20T07:34:42.715Z"
+    },
+    {
+      "name": "TournamentVault",
+      "address": "0x9ab90329fdd0D1B3729c6eAb4bf78F354d63E3de",
+      "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "transactionHash": "0xa06dc7c11ac515a54990ffda090fa25842f352297bb3a08cf70e3b0a31990253",
+      "constructorArguments": [
+        "0x381B1b215dee83Dee9b899da0D012Fc2657750F9"
+      ],
+      "creationBytecodeHash": "0x5e17da219685c42d58b253232e72deafa7865ad2eae10e71a464179a554f9aa7",
+      "deploymentStatus": "Confirmed",
+      "explorer": "https://sepolia.etherscan.io/address/0x9ab90329fdd0D1B3729c6eAb4bf78F354d63E3de#code",
+      "verification": "Verified",
+      "blockNumber": 12173879,
+      "gasUsed": "18874927",
+      "verificationAttempts": [
+        {
+          "checkedAt": "2026-11-20T07:36:37.290Z",
+          "attempt": 1,
+          "outcome": "Verified"
+        }
+      ],
+      "verifiedAt": "2026-11-20T07:36:37.290Z"
+    },
+    {
+      "name": "LRTExchange",
+      "address": "0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27",
+      "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "transactionHash": "0x45d7afd86c031849b4d419b295ba082e8202d2ae0e17b90631a3e911a5cd4fc0",
+      "constructorArguments": [
+        "0x381B1b215dee83Dee9b899da0D012Fc2657750F9"
+      ],
+      "creationBytecodeHash": "0xdf7295d63bb93b421d43b438097396e34ac52fb70cbbe64a74a36344188f3870",
+      "deploymentStatus": "Confirmed",
+      "explorer": "https://sepolia.etherscan.io/address/0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27#code",
+      "verification": "Verified",
+      "blockNumber": 12173881,
+      "gasUsed": "4209957",
+      "verificationAttempts": [
+        {
+          "checkedAt": "2026-11-20T07:36:39.926Z",
+          "attempt": 1,
+          "outcome": "Verified"
+        }
+      ],
+      "verifiedAt": "2026-11-20T07:36:39.926Z"
+    }
+  ],
+  "completedAt": "2026-11-20T07:33:50.773Z"
+}

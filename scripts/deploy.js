@@ -2,15 +2,17 @@ const { ethers, network, artifacts } = require('hardhat');
 const fs = require('fs');
 const path = require('path');
 
-async function deploySystem() {
+async function deploySystem({ recordName = network.name } = {}) {
+  if (!/^(hardhat|localhost|sepolia(?:-v\d+)?)$/.test(recordName)) throw new Error('Unsupported deployment record name');
   const chain = await ethers.provider.getNetwork();
   if (![31337n, 11155111n].includes(chain.chainId)) throw new Error('Only local development and Sepolia are supported');
+  if (recordName.startsWith('sepolia') && chain.chainId !== 11155111n) throw new Error('Sepolia deployment records require Sepolia chain ID 11155111');
   const [deployer] = await ethers.getSigners();
   if (!deployer) throw new Error('Configure a dedicated testnet deployer in .env');
   const supply = ethers.parseEther(process.env.INITIAL_SUPPLY_LRT || '1000000');
   const directory = path.join(__dirname, '..', 'deployment');
   fs.mkdirSync(directory, { recursive: true });
-  const recordFile = path.join(directory, `${network.name}.json`);
+  const recordFile = path.join(directory, `${recordName}.json`);
   let record = { network: network.name, chainId: chain.chainId.toString(),
     deployedAt: new Date().toISOString(), compiler: require('solc').version(),
     optimizer: { enabled: true, runs: 200 }, evmVersion: 'cancun',
@@ -64,7 +66,11 @@ async function deploySystem() {
   }
   record.completedAt = new Date().toISOString();
   save();
-  const uiConfig = { chainId: Number(chain.chainId), contracts: {} };
+  const deployedBlocks = records.map(item => Number(item.blockNumber)).filter(Number.isFinite);
+  const activityFromBlock = chain.chainId === 11155111n && deployedBlocks.length
+    ? Math.min(...deployedBlocks)
+    : 0;
+  const uiConfig = { chainId: Number(chain.chainId), activityFromBlock, contracts: {} };
   for (const r of records) uiConfig.contracts[r.name] = { address: r.address, abi: (await artifacts.readArtifact(r.name)).abi };
   fs.mkdirSync(path.join(__dirname, '..', 'ui'), { recursive: true });
   fs.writeFileSync(path.join(__dirname, '..', 'ui', 'config.json'), JSON.stringify(uiConfig, null, 2));

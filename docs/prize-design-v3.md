@@ -1,0 +1,9 @@
+# V3 prize design
+
+TournamentVault V3 uses ETH as the primary prize asset and LRT as an optional additional bonus. At creation, the organizer submits exactly the ETH prize amount in the same transaction. The contract rejects a mismatch and records the funds as an ETH liability. Registration opens later; if the organizer chose an LRT bonus above zero, the organizer approves and deposits that amount at opening. A zero LRT bonus requires no token approval.
+
+The same ranked shares allocate both assets. `withdrawPrize` transfers each winner's ETH and LRT credits together. If a tournament is cancelled before settlement, the organizer can recover the escrowed ETH and any bonus already deposited. Participant entry fees retain their existing separate refund and organizer-withdrawal flow. The exchange remains independent: LRT redemption liquidity does not determine whether the ETH prize can be paid.
+
+The interface currently pre-fills an editable demonstration example of 0.05 ETH plus 10,000 LRT, a 0.001 ETH entry fee, and 50/30/20 shares. The ETH and LRT amounts are demonstration defaults and are not fixed contract limits or final event terms.
+
+V3 is a new immutable deployment. It reuses the existing LearningRewardToken (`0x381B1b215dee83Dee9b899da0D012Fc2657750F9`) and LRTExchange (`0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27`) and deploys TournamentVaultV3 at `0x86b64B582dB3F6DD9bf43A923300B2d150D72D17`. The V3 vault transaction is `0xff3b7b879e05702902dcd994c43ddb82febe12e02d568423e84626e72408094d`; the block and verification evidence are in `deployment/sepolia-v3.json` and `deployment/sepolia-v3-read-only-check.json`. Its source is verified on Etherscan. Earlier V1/V2 deployments remain unchanged. The read-only snapshot has zero tournaments and zero ETH/token liabilities; no V3 demo event has been created because the demo prize amounts remain unfinalized.

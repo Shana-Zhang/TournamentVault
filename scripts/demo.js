@@ -41,10 +41,7 @@ async function main() {
   await step('Create cancellation example', vault.createTournament({ ...rules, registrationDeadline: now2 + 600, resultDeadline: now2 + 1200 }, referee.address, resolver.address, [5000, 3000, 2000]));
   await step('Approve second prize', token.approve(vault.target, rules.prize));
   await step('Open second tournament', vault.fundAndOpen(2));
-  await step('Register refundable player', vault.connect(a).register(2, { value: rules.entryFee }));
-  await step('Cancel second tournament', vault.cancelTournament(2));
-  await step('Credit player refund', vault.connect(a).claimRefund(2));
-  await step('Withdraw player refund', vault.connect(a).withdrawETH(a.address));
+  await step('Cancel empty tournament before the first registration', vault.cancelTournament(2));
   await step('Return organizer prize', vault.refundOrganizer(2, organizer.address));
   evidence.checks = {
     tournament1State: Number((await vault.getTournament(1)).state), tournament2State: Number((await vault.getTournament(2)).state),
@@ -57,6 +54,6 @@ async function main() {
   if (evidence.checks.vaultETHLiability !== '0' || evidence.checks.vaultLRTLiability !== '0' || evidence.checks.exchangeCredits !== '0') throw new Error('Unpaid demo liability');
   fs.mkdirSync(path.join(__dirname, '..', 'evidence'), { recursive: true });
   fs.writeFileSync(path.join(__dirname, '..', 'evidence', 'local-demo.json'), JSON.stringify(evidence, null, 2));
-  console.log('Demo verified: dispute resolution, token prizes, fee settlement, redemption and cancellation refunds.');
+  console.log('Demo verified: dispute resolution, token prizes, fee settlement, redemption and pre-registration cancellation. Timeout refund behavior is covered by the automated tests.');
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });

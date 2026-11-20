@@ -1,8 +1,9 @@
 {
   "chainId": 11155111,
+  "activityFromBlock": 12173877,
   "contracts": {
     "LearningRewardToken": {
-      "address": "0xF258884763CEc4239F33A9bBf9f2c603Bb1b2D69",
+      "address": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
       "abi": [
         {
           "inputs": [
@@ -330,8 +331,8 @@
         }
       ]
     },
-    "TournamentVault": {
-      "address": "0xB1BD230B6B97dC4401E61b7721579B241a9CCdbc",
+    "TournamentVaultV3": {
+      "address": "0x86b64B582dB3F6DD9bf43A923300B2d150D72D17",
       "abi": [
         {
           "inputs": [
@@ -467,7 +468,13 @@
             {
               "indexed": false,
               "internalType": "uint256",
-              "name": "amount",
+              "name": "ethAmount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "lrtAmount",
               "type": "uint256"
             }
           ],
@@ -523,7 +530,13 @@
             {
               "indexed": false,
               "internalType": "uint256",
-              "name": "amount",
+              "name": "ethAmount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "lrtAmount",
               "type": "uint256"
             }
           ],
@@ -586,7 +599,7 @@
             {
               "indexed": false,
               "internalType": "uint256",
-              "name": "prize",
+              "name": "lrtBonus",
               "type": "uint256"
             }
           ],
@@ -705,7 +718,12 @@
                 },
                 {
                   "internalType": "uint256",
-                  "name": "prize",
+                  "name": "ethPrize",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lrtBonus",
                   "type": "uint256"
                 },
                 {
@@ -734,7 +752,7 @@
                   "type": "uint64"
                 }
               ],
-              "internalType": "struct TournamentVault.Rules",
+              "internalType": "struct TournamentVaultV3.Rules",
               "name": "rules",
               "type": "tuple"
             },
@@ -762,7 +780,7 @@
               "type": "uint256"
             }
           ],
-          "stateMutability": "nonpayable",
+          "stateMutability": "payable",
           "type": "function"
         },
         {
@@ -787,6 +805,30 @@
         {
           "inputs": [],
           "name": "ethLiability",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "name": "ethPrizeCredits",
           "outputs": [
             {
               "internalType": "uint256",
@@ -851,7 +893,7 @@
                   "type": "address"
                 },
                 {
-                  "internalType": "enum TournamentVault.State",
+                  "internalType": "enum TournamentVaultV3.State",
                   "name": "state",
                   "type": "uint8"
                 },
@@ -864,7 +906,12 @@
                     },
                     {
                       "internalType": "uint256",
-                      "name": "prize",
+                      "name": "ethPrize",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "lrtBonus",
                       "type": "uint256"
                     },
                     {
@@ -893,7 +940,7 @@
                       "type": "uint64"
                     }
                   ],
-                  "internalType": "struct TournamentVault.Rules",
+                  "internalType": "struct TournamentVaultV3.Rules",
                   "name": "rules",
                   "type": "tuple"
                 },
@@ -938,7 +985,7 @@
                   "type": "uint16[]"
                 }
               ],
-              "internalType": "struct TournamentVault.Tournament",
+              "internalType": "struct TournamentVaultV3.Tournament",
               "name": "",
               "type": "tuple"
             }
@@ -1218,7 +1265,7 @@
       ]
     },
     "LRTExchange": {
-      "address": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+      "address": "0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27",
       "abi": [
         {
           "inputs": [

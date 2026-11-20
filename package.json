@@ -2,22 +2,29 @@
   "name": "tournament-vault",
   "version": "1.0.0",
   "private": true,
-  "description": "Esports tournament escrow with token prizes and fixed-rate redemption",
+  "description": "ETH prize escrow with optional LRT bonuses for esports tournaments",
   "scripts": {
-    "check": "npm run compile && npm test && npm run analyze",
     "compile": "hardhat compile",
     "test": "hardhat test",
     "coverage": "hardhat coverage",
     "demo": "hardhat run scripts/demo.js",
-    "ui:sepolia": "npm run compile && node scripts/configure-ui.js",
-    "read:sepolia": "npm run compile && node scripts/check-tournament-demo.js --public-rpc",
     "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:local:v3": "hardhat run scripts/deploy-local-v3.js --network localhost",
     "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:sepolia:v2": "hardhat run scripts/deploy-v2.js --network sepolia",
+    "deploy:sepolia:v3": "hardhat run scripts/deploy-v3.js --network sepolia",
+    "smoke:sepolia:v2": "hardhat run scripts/smoke-v2-sepolia.js --network sepolia",
     "verify:sepolia": "hardhat run scripts/verify.js --network sepolia",
+    "verify:sepolia:v2": "hardhat run scripts/verify-v2.js --network sepolia",
+    "verify:sepolia:v3": "hardhat run scripts/verify-v3.js --network sepolia",
+    "check:sepolia:v2": "node scripts/read-only-check.js sepolia-v2",
+    "check:sepolia:v3": "node scripts/read-only-check.js sepolia-v3",
+    "config:check": "node scripts/check-ui-config.js",
     "node": "hardhat node",
     "serve": "node scripts/serve.js",
     "analyze": "node scripts/analyze.js",
-    "preflight": "node scripts/preflight.js"
+    "preflight": "node scripts/preflight.js",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "2.1.2",
@@ -31,8 +38,5 @@
     "hardhat": "2.29.2",
     "solc": "0.8.26",
     "solidity-coverage": "0.8.17"
-  },
-  "engines": {
-    "node": ">=22 <23 || >=24 <25"
   }
 }

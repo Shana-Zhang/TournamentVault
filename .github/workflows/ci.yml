@@ -22,11 +22,11 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-      - name: Compile and run 57 tests
+      - name: Compile and run all tests
         run: npm run compile && npm test
       - name: Run complete local transaction demonstration
         run: npm run demo
       - name: Review compiler output and project AST
         run: npm run analyze
-      - name: Verify existing Sepolia configuration without network access
-        run: npm run ui:sepolia
+      - name: Check the saved Sepolia UI configuration
+        run: npm run config:check

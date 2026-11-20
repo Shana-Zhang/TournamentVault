@@ -2,10 +2,11 @@ const { run, network, ethers } = require('hardhat');
 const fs = require('fs');
 const path = require('path');
 
-async function main() {
+async function main(recordName = process.env.DEPLOYMENT_RECORD || network.name) {
   if (network.name !== 'sepolia' || (await ethers.provider.getNetwork()).chainId !== 11155111n) throw new Error('Use --network sepolia');
   if (!process.env.ETHERSCAN_API_KEY) throw new Error('Set ETHERSCAN_API_KEY in .env');
-  const file = path.join(__dirname, '..', 'deployment', 'sepolia.json');
+  if (!/^sepolia(?:-v\d+)?$/.test(recordName)) throw new Error('Unsupported Sepolia deployment record');
+  const file = path.join(__dirname, '..', 'deployment', `${recordName}.json`);
   const record = JSON.parse(fs.readFileSync(file));
   if (!record.completedAt || record.contracts.length !== 3 || record.contracts.some(c => c.deploymentStatus !== 'Confirmed'))
     throw new Error('Complete the three deployments before source verification');
@@ -61,7 +62,8 @@ async function main() {
     if (contract.verification !== 'Verified') { failures++; pending.push(contract.name); }
     console.log(`${contract.name}: ${contract.verification}`);
   }
-  require('./sync-deployment').syncDeployment();
+  require('./sync-deployment').syncDeployment({ recordName });
   if (failures) throw new Error(`Verification still pending: ${pending.join(', ')}. Successful verifications were preserved.`);
 }
-main().catch(error => { console.error(error.message); process.exitCode = 1; });
+if (require.main === module) main().catch(error => { console.error(error.message); process.exitCode = 1; });
+module.exports = { main };

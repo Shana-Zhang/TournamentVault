@@ -173,6 +173,8 @@ contract TournamentVault is ReentrancyGuard {
         Tournament storage t = _get(id);
         require(msg.sender == t.organizer, "Only organizer");
         require(t.state != State.Finalized && t.state != State.Cancelled, "Terminal state");
+        require(t.playerCount == 0, "Players already registered");
+        require(t.state == State.Draft || t.state == State.RegistrationOpen, "Wrong state");
         _cancel(id, t);
     }
 
