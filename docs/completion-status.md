@@ -25,7 +25,7 @@ Updated 20 November 2026. All project files are under E:\BC_Project.
 
 The historical V1/V2 public deployment, verification and V1 settlement/exchange evidence remain complete. V3 changes the prize design, has seven dedicated passing local tests, and is deployed and source verified. Its current on-chain tournament count and liabilities are zero; no V3 prize demo has been sent because the demonstration amount remains unfinalized. Do not treat V1/V2 tournament activity as V3 prize-flow evidence.
 
-Funded cancellation/refund behavior is covered by local tests and evidence/local-demo.json; the historical public cancellations were unfunded draft cleanup. The report date is 20 November 2026. The source, reproducibility workflow and V3 deployment records are prepared for the specified GitHub repository. No course-portal submission has been made.
+Funded cancellation/refund behavior is covered by local tests and evidence/local-demo.json; the historical public cancellations were unfunded draft cleanup. The report date is 20 November 2026. Source, reproducibility workflow, V3 deployment records and the final report are published to https://github.com/Shana-Zhang/TournamentVault on main at commit 4f134df6b20aac14980111ba242c570e27aaeac6. No course-portal submission has been made.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File E:\BC_Project\run.ps1 preflight
