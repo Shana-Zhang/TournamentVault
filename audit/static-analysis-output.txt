@@ -1,0 +1,10 @@
+
+> tournament-vault@1.0.0 analyze
+> node scripts/analyze.js
+
+Compiler: 0.8.26+commit.8a97fa7a.Emscripten.clang; project AST nodes: 3664; compiler errors: 0
+LRTExchange: 2513 runtime bytes (limit 24576)
+LearningRewardToken: 1764 runtime bytes (limit 24576)
+TournamentVault: 11996 runtime bytes (limit 24576)
+TournamentVaultV3: 12731 runtime bytes (limit 24576)
+Findings: {"Review":39}. Review items require the manual analysis in audit/security-review.md.

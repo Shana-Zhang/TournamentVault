@@ -1,9 +1,9 @@
 {
   "chainId": 11155111,
-  "activityFromBlock": 12173877,
+  "activityFromBlock": 12194297,
   "contracts": {
     "LearningRewardToken": {
-      "address": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+      "address": "0xE6b0239029382019323daca86A798364AEc5E637",
       "abi": [
         {
           "inputs": [
@@ -332,7 +332,7 @@
       ]
     },
     "TournamentVaultV3": {
-      "address": "0x86b64B582dB3F6DD9bf43A923300B2d150D72D17",
+      "address": "0xbb74eEca21239034cCdB3e9244256DAd7A664FDb",
       "abi": [
         {
           "inputs": [
@@ -1265,7 +1265,7 @@
       ]
     },
     "LRTExchange": {
-      "address": "0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27",
+      "address": "0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B",
       "abi": [
         {
           "inputs": [

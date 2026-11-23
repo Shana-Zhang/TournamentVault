@@ -1,0 +1,66 @@
+{
+  "network": "Sepolia",
+  "chainId": 11155111,
+  "deployment": "sepolia-v2",
+  "startedAt": "2026-11-20T07:37:20.039Z",
+  "contracts": {
+    "LearningRewardToken": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+    "TournamentVault": "0x9ab90329fdd0D1B3729c6eAb4bf78F354d63E3de",
+    "LRTExchange": "0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27"
+  },
+  "transactions": [
+    {
+      "label": "Create V2 smoke tournament",
+      "hash": "0x2708ba041d499ef281123052c6d82a76952fee3ace567db553e3565ca81e92d7",
+      "status": "Confirmed",
+      "blockNumber": 12173898,
+      "gasUsed": "1023895",
+      "explorer": "https://sepolia.etherscan.io/tx/0x2708ba041d499ef281123052c6d82a76952fee3ace567db553e3565ca81e92d7"
+    },
+    {
+      "label": "Approve V2 smoke prize",
+      "hash": "0x6a6d60cbb4ded8ad88a5a78f3cef62e3f1f1cc670eb6cabfad8d83717a8a2d32",
+      "status": "Confirmed",
+      "blockNumber": 12173900,
+      "gasUsed": "128287",
+      "explorer": "https://sepolia.etherscan.io/tx/0x6a6d60cbb4ded8ad88a5a78f3cef62e3f1f1cc670eb6cabfad8d83717a8a2d32"
+    },
+    {
+      "label": "Open V2 smoke tournament",
+      "hash": "0x8f9b61e4766d3acb386d43c3dab8c437deadbed9ef9be3c2b62cbf60b0710896",
+      "status": "Confirmed",
+      "blockNumber": 12173902,
+      "gasUsed": "390839",
+      "explorer": "https://sepolia.etherscan.io/tx/0x8f9b61e4766d3acb386d43c3dab8c437deadbed9ef9be3c2b62cbf60b0710896"
+    },
+    {
+      "label": "Cancel V2 tournament before first registration",
+      "hash": "0x7b9ddf09c6cd64597ffc4c2ee19a2a61e998f76176b58e92d2d657756558d663",
+      "status": "Confirmed",
+      "blockNumber": 12173904,
+      "gasUsed": "36189",
+      "explorer": "https://sepolia.etherscan.io/tx/0x7b9ddf09c6cd64597ffc4c2ee19a2a61e998f76176b58e92d2d657756558d663"
+    },
+    {
+      "label": "Recover V2 empty-tournament prize",
+      "hash": "0x374f35579e1ce8dd097317a4eba591d97b029222c0c74f97b9171419d0e48a16",
+      "status": "Confirmed",
+      "blockNumber": 12173906,
+      "gasUsed": "160985",
+      "explorer": "https://sepolia.etherscan.io/tx/0x374f35579e1ce8dd097317a4eba591d97b029222c0c74f97b9171419d0e48a16"
+    }
+  ],
+  "checks": {
+    "tournamentId": "1",
+    "state": 6,
+    "playerCount": 0,
+    "organizerRefundClaimed": true,
+    "tokenLiability": "0",
+    "ethLiability": "0",
+    "prizeReturnedLRT": "1.0",
+    "gasSpentWei": "1740195000000000"
+  },
+  "initialBalanceWei": "2155022115006025075",
+  "tournamentId": "1",
+  "completedAt": "2026-11-20T07:39:15.349Z"
+}

@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-11-23T08:34:33.261Z",
+  "block": 12194549,
+  "mode": "read-only",
+  "vault": "0xbb74eEca21239034cCdB3e9244256DAd7A664FDb",
+  "receipts": [
+    {
+      "hash": "0x9ccca6af31860795088ebdc0b30606c452fece59ba132fe3314d180a300c35ac",
+      "status": 1,
+      "blockNumber": 12194323,
+      "gasUsed": "1359877"
+    },
+    {
+      "hash": "0xf32513973d08be22d05ccbbd502c792f3cafa84dd0caa7772c2d2ecc8a7f9f7c",
+      "status": 1,
+      "blockNumber": 12194326,
+      "gasUsed": "128287"
+    },
+    {
+      "hash": "0xe212ec229f6b96d71f1090aa0eb37f20f6b22ad59b96e39efa4f7182e5ce14c8",
+      "status": 1,
+      "blockNumber": 12194328,
+      "gasUsed": "390967"
+    },
+    {
+      "hash": "0x0252ff296baeac610fa3e213a413a0349d8823f51269713af5207d38f7a5543f",
+      "status": 1,
+      "blockNumber": 12194334,
+      "gasUsed": "380221"
+    },
+    {
+      "hash": "0x672d5eead6dc383a83e5d8993ef6b1ca91d854d0ff87d3ddb45cf9d9cb9a7792",
+      "status": 1,
+      "blockNumber": 12194349,
+      "gasUsed": "184381"
+    },
+    {
+      "hash": "0x088ed53327b197c550d9c03b40660d86921087856592572416199c04d0dee7ee",
+      "status": 1,
+      "blockNumber": 12194356,
+      "gasUsed": "184381"
+    },
+    {
+      "hash": "0xa6baac3b148e5aff215ea28ba8d82accb9ca263d51b45048cab60986357be1d3",
+      "status": 1,
+      "blockNumber": 12194415,
+      "gasUsed": "38136"
+    },
+    {
+      "hash": "0xc5da17edfcc6becdc3690570816bfed5b7ed2c8779ee522ddb45511e2d316c55",
+      "status": 1,
+      "blockNumber": 12194421,
+      "gasUsed": "615577"
+    },
+    {
+      "hash": "0xe9b2b1f1290c1b932413abb9d742f801b0b7a0802daef4ea2de44af89778e009",
+      "status": 1,
+      "blockNumber": 12194430,
+      "gasUsed": "49512"
+    },
+    {
+      "hash": "0x0d2c16d791ecabe0a784c12fd5cffc89c478d9e01547edd37bd8857f32b30ef0",
+      "status": 1,
+      "blockNumber": 12194435,
+      "gasUsed": "879649"
+    },
+    {
+      "hash": "0x319cec6c7635ba0909a92fea33a4926ef0293788cdb32e883f26a75f721bf469",
+      "status": 1,
+      "blockNumber": 12194441,
+      "gasUsed": "185040"
+    },
+    {
+      "hash": "0x665fda9a881d58ca87e8fda89382257b15fab1b9510fe044d9cda0517b8e02c2",
+      "status": 1,
+      "blockNumber": 12194456,
+      "gasUsed": "185040"
+    },
+    {
+      "hash": "0xdb4613538e6ccdc58e6af752a88863aea22a3ad6303066a5d83513637e1d6082",
+      "status": 1,
+      "blockNumber": 12194466,
+      "gasUsed": "174618"
+    },
+    {
+      "hash": "0xa9c06954b7737611e55a32c4d11f58dfbaa272a722f4a04efaa86bfc76282708",
+      "status": 1,
+      "blockNumber": 12194473,
+      "gasUsed": "51217"
+    },
+    {
+      "hash": "0xa79cd8b27282ce43382f64636abad2f8f055e95a5239ce728bc312d9ba7279e8",
+      "status": 1,
+      "blockNumber": 12194365,
+      "gasUsed": "140858"
+    },
+    {
+      "hash": "0xa92a4ef92a790a88a5bc1a48831d35a3bab4f4fae23722916c810373dd7f5d54",
+      "status": 1,
+      "blockNumber": 12194368,
+      "gasUsed": "22491"
+    },
+    {
+      "hash": "0x4550e36258c541d9f027d82a99ecfe0cf1e412761586ee6a8ed779deae9b9fd3",
+      "status": 1,
+      "blockNumber": 12194392,
+      "gasUsed": "154909"
+    },
+    {
+      "hash": "0x4279ee9cd1da0768623c4a9bac98db6d5992edf66f0d5218bb074c0068472f84",
+      "status": 1,
+      "blockNumber": 12194396,
+      "gasUsed": "128299"
+    },
+    {
+      "hash": "0xdcdd259f17613e640c602b380fdff67eb62c02d8c5bf5413d53684a339bfe721",
+      "status": 1,
+      "blockNumber": 12194398,
+      "gasUsed": "260912"
+    },
+    {
+      "hash": "0xf63d0ecd75177395ad919ae423c6fb0ef9473ce2d5bcb956cb0ee75502b0b6df",
+      "status": 1,
+      "blockNumber": 12194405,
+      "gasUsed": "51232"
+    }
+  ],
+  "tournaments": [
+    {
+      "id": 1,
+      "state": "Finalized",
+      "playerCount": 3,
+      "ethPrize": "0.001",
+      "fees": "0.003",
+      "winners": [
+        "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+        "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+        "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
+      ]
+    },
+    {
+      "id": 2,
+      "state": "Registration open",
+      "playerCount": 1,
+      "ethPrize": "0.000001",
+      "fees": "0.000001",
+      "winners": []
+    }
+  ],
+  "players": [
+    {
+      "address": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "ethPrizeCredit": "0",
+      "lrtPrizeCredit": "0"
+    },
+    {
+      "address": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+      "ethPrizeCredit": "0",
+      "lrtPrizeCredit": "0"
+    },
+    {
+      "address": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+      "ethPrizeCredit": "0",
+      "lrtPrizeCredit": "0"
+    }
+  ],
+  "ethLiability": "2000000000000",
+  "tokenLiability": "0",
+  "exchangeReserve": "0.001",
+  "exchangeAccount5Credit": "0"
+}

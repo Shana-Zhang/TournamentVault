@@ -1,0 +1,50 @@
+'npx hardhat clean' running (wd: E:\BC_Project)
+'npx hardhat clean --global' running (wd: E:\BC_Project)
+'npx hardhat compile --force' running (wd: E:\BC_Project)
+
+Detector: uninitialized-local
+TournamentVault._settle(uint256,TournamentVault.Tournament).allocated (contracts/TournamentVault.sol#250) is a local variable never initialized
+TournamentVault.createTournament(TournamentVault.Rules,address,address,uint16[]).sum (contracts/TournamentVault.sol#78) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+
+Detector: timestamp
+TournamentVault.createTournament(TournamentVault.Rules,address,address,uint16[]) (contracts/TournamentVault.sol#69-92) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(rules.registrationDeadline > block.timestamp && rules.resultDeadline > rules.registrationDeadline,Invalid deadlines) (contracts/TournamentVault.sol#76)
+TournamentVault.fundAndOpen(uint256) (contracts/TournamentVault.sol#95-105) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp < t.rules.registrationDeadline,Registration closed) (contracts/TournamentVault.sol#99)
+TournamentVault.register(uint256) (contracts/TournamentVault.sol#107-120) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp < t.rules.registrationDeadline,Registration closed) (contracts/TournamentVault.sol#110)
+TournamentVault.lockRegistration(uint256) (contracts/TournamentVault.sol#122-129) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp >= t.rules.registrationDeadline,Too early) (contracts/TournamentVault.sol#125)
+TournamentVault.submitResult(uint256,address[],bytes32) (contracts/TournamentVault.sol#131-140) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(msg.sender == t.referee,Only referee) (contracts/TournamentVault.sol#133)
+	- require(bool,string)(t.state == State.Locked,Wrong state) (contracts/TournamentVault.sol#134)
+	- require(bool,string)(block.timestamp < t.rules.resultDeadline,Result expired) (contracts/TournamentVault.sol#135)
+TournamentVault.raiseDispute(uint256,bytes32) (contracts/TournamentVault.sol#142-151) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(t.state == State.ResultPending,Wrong state) (contracts/TournamentVault.sol#144)
+	- require(bool,string)(block.timestamp < t.disputeDeadline,Dispute closed) (contracts/TournamentVault.sol#146)
+TournamentVault.resolveDispute(uint256,address[],bytes32) (contracts/TournamentVault.sol#154-162) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp < t.resolutionDeadline,Resolution expired) (contracts/TournamentVault.sol#158)
+TournamentVault.finalizeResult(uint256) (contracts/TournamentVault.sol#164-169) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp >= t.disputeDeadline,Too early) (contracts/TournamentVault.sol#167)
+TournamentVault.cancelExpired(uint256) (contracts/TournamentVault.sol#182-189) uses timestamp for comparisons
+	Dangerous comparisons:
+	- expired = (t.state == State.Draft && block.timestamp >= t.rules.registrationDeadline) || ((t.state == State.Locked || t.state == State.RegistrationOpen) && block.timestamp >= t.rules.resultDeadline) || (t.state == State.Disputed && block.timestamp >= t.resolutionDeadline) (contracts/TournamentVault.sol#184-186)
+	- require(bool,string)(expired,Not expired) (contracts/TournamentVault.sol#187)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+Detector: low-level-calls
+Low level call in LRTExchange.withdrawETH(address) (contracts/LRTExchange.sol#55-64):
+	- (ok,None) = recipient.call{value: amount}() (contracts/LRTExchange.sol#61)
+Low level call in TournamentVault.withdrawETH(address) (contracts/TournamentVault.sol#221-230):
+	- (ok,None) = recipient.call{value: amount}() (contracts/TournamentVault.sol#227)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+. analyzed (19 contracts with 102 detectors), 13 result(s) found

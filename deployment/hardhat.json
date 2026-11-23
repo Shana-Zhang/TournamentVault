@@ -1,0 +1,62 @@
+{
+  "network": "hardhat",
+  "chainId": "31337",
+  "deployedAt": "2026-11-20T07:22:46.398Z",
+  "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "evmVersion": "cancun",
+  "rate": "1 LRT = 0.000000001 ETH",
+  "supply": "1000000000000000000000000",
+  "contracts": [
+    {
+      "name": "LearningRewardToken",
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "transactionHash": "0x811b326d37eef4880a017f199bd5d0301ab29eb6db6d9bb081d88d0cb02ed6e0",
+      "constructorArguments": [
+        "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "1000000000000000000000000"
+      ],
+      "creationBytecodeHash": "0xd3c5640a9ee525eaf377e6b04a23157c4554636b0d5e5c2739cd756da7022e8d",
+      "deploymentStatus": "Confirmed",
+      "explorer": null,
+      "verification": "Not yet verified",
+      "blockNumber": 1,
+      "gasUsed": "543617"
+    },
+    {
+      "name": "TournamentVault",
+      "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "transactionHash": "0x989adc99660a97ba6a63d53313caad4ca4f4975e98da007b4c334fef998f9be8",
+      "constructorArguments": [
+        "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      ],
+      "creationBytecodeHash": "0x5e17da219685c42d58b253232e72deafa7865ad2eae10e71a464179a554f9aa7",
+      "deploymentStatus": "Confirmed",
+      "explorer": null,
+      "verification": "Not yet verified",
+      "blockNumber": 2,
+      "gasUsed": "2674977"
+    },
+    {
+      "name": "LRTExchange",
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "transactionHash": "0x4c170026853e0732a0c40ca3220fff899fc389444add8825a172100be6cbe0a5",
+      "constructorArguments": [
+        "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      ],
+      "creationBytecodeHash": "0xdf7295d63bb93b421d43b438097396e34ac52fb70cbbe64a74a36344188f3870",
+      "deploymentStatus": "Confirmed",
+      "explorer": null,
+      "verification": "Not yet verified",
+      "blockNumber": 3,
+      "gasUsed": "624173"
+    }
+  ],
+  "completedAt": "2026-11-20T07:22:46.756Z"
+}

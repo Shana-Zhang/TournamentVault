@@ -1,0 +1,14 @@
+{
+  "run": "npm test -- --grep \"TournamentVaultV3 ETH prize\"",
+  "result": "7 passing",
+  "cases": [
+    { "case": "Exact ETH prize escrow and mismatch rejection", "status": "passed" },
+    { "case": "Shared ETH/LRT ranked payout and winner withdrawal", "status": "passed" },
+    { "case": "Zero LRT bonus without token funding", "status": "passed" },
+    { "case": "Cancellation returns ETH and funded LRT bonus", "status": "passed" },
+    { "case": "Draft cancellation returns ETH before bonus funding", "status": "passed" },
+    { "case": "Expired state cancellation and player fee refund", "status": "passed" },
+    { "case": "Rejected ETH payout rollback and reentrancy resistance", "status": "passed" }
+  ],
+  "deployment": "Local Hardhat only; no Sepolia transaction was sent during these tests."
+}

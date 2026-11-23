@@ -133,11 +133,12 @@ function updateRoleInterface(t, isRegistered, prizeCredit, ethCredit, refundClai
 }
 async function readEventLogs(contract, filter, fromBlock, toBlock) {
   if (fromBlock > toBlock) return [];
+  const topics = await filter.getTopicFilter();
   const chunkSize = 5000, concurrency = 4, result = [];
   for (let start = fromBlock; start <= toBlock; start += chunkSize * concurrency) {
     const ranges = Array.from({ length: concurrency }, (_, index) => {
       const rangeStart = start + index * chunkSize;
-      return rangeStart <= toBlock ? { address: contract.target, topics: filter.topics,
+      return rangeStart <= toBlock ? { address: contract.target, topics,
         fromBlock: rangeStart, toBlock: Math.min(rangeStart + chunkSize - 1, toBlock) } : null;
     }).filter(Boolean);
     const batches = await Promise.all(ranges.map(range => provider.getLogs(range)));

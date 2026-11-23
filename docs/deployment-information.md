@@ -4,13 +4,13 @@
 
 All three contract sources are verified on Etherscan.
 
-Network: Sepolia. Chain ID: 11155111. Deployer: 0xdE3d23a1245f07859279b759b528615Eb55BcAc4. Deployment completed at 2026-11-20T09:07:27.725Z UTC. Compiler: v0.8.26+commit.8a97fa7a. Optimizer: enabled, 200 runs. EVM: Cancun.
+Network: Sepolia. Chain ID: 11155111. Deployer: 0xdE3d23a1245f07859279b759b528615Eb55BcAc4. Deployment completed at 2026-11-23T07:43:03.945Z UTC. Compiler: v0.8.26+commit.8a97fa7a. Optimizer: enabled, 200 runs. EVM: Cancun.
 
 | Contract | Address | Transaction | Block | Source verification |
 | --- | --- | --- | --- | --- |
-| LearningRewardToken | [0x381B1b215dee83Dee9b899da0D012Fc2657750F9](https://sepolia.etherscan.io/address/0x381B1b215dee83Dee9b899da0D012Fc2657750F9#code) | [0x7b39736dcb0e869f2307cb28fa28f20b12eb94e3d9af387d7bb9404a1c6fe578](https://sepolia.etherscan.io/tx/0x7b39736dcb0e869f2307cb28fa28f20b12eb94e3d9af387d7bb9404a1c6fe578) | 12173877 | Verified |
-| TournamentVaultV3 | [0x86b64B582dB3F6DD9bf43A923300B2d150D72D17](https://sepolia.etherscan.io/address/0x86b64B582dB3F6DD9bf43A923300B2d150D72D17#code) | [0xff3b7b879e05702902dcd994c43ddb82febe12e02d568423e84626e72408094d](https://sepolia.etherscan.io/tx/0xff3b7b879e05702902dcd994c43ddb82febe12e02d568423e84626e72408094d) | 12174303 | Verified |
-| LRTExchange | [0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27](https://sepolia.etherscan.io/address/0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27#code) | [0x45d7afd86c031849b4d419b295ba082e8202d2ae0e17b90631a3e911a5cd4fc0](https://sepolia.etherscan.io/tx/0x45d7afd86c031849b4d419b295ba082e8202d2ae0e17b90631a3e911a5cd4fc0) | 12173881 | Verified |
+| LearningRewardToken | [0xE6b0239029382019323daca86A798364AEc5E637](https://sepolia.etherscan.io/address/0xE6b0239029382019323daca86A798364AEc5E637#code) | [0xe67c367cecab257cccce92c4f33ace4ffd166c47c20d82e39d30defd01df3557](https://sepolia.etherscan.io/tx/0xe67c367cecab257cccce92c4f33ace4ffd166c47c20d82e39d30defd01df3557) | 12194297 | Verified |
+| TournamentVaultV3 | [0xbb74eEca21239034cCdB3e9244256DAd7A664FDb](https://sepolia.etherscan.io/address/0xbb74eEca21239034cCdB3e9244256DAd7A664FDb#code) | [0xed0e2fbc6af643618e19568f3a6480c07531e127878b2afaf999b06228f01dc3](https://sepolia.etherscan.io/tx/0xed0e2fbc6af643618e19568f3a6480c07531e127878b2afaf999b06228f01dc3) | 12194299 | Verified |
+| LRTExchange | [0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B](https://sepolia.etherscan.io/address/0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B#code) | [0x1483bae24d47bfcaabbc5f83bc1265076a7a49931aefac0cdf9a1cb5cd5dc31a](https://sepolia.etherscan.io/tx/0x1483bae24d47bfcaabbc5f83bc1265076a7a49931aefac0cdf9a1cb5cd5dc31a) | 12194305 | Verified |
 
 Creation bytecode hashes match the saved deployment records for all three contracts. See deployment/source-match.json.
 

@@ -1,0 +1,18 @@
+{
+  "network": "sepolia",
+  "vault": "0x86b64B582dB3F6DD9bf43A923300B2d150D72D17",
+  "tournamentId": 2,
+  "status": "cancelled-organizer-refund-confirmed",
+  "registrationDeadline": "2026-11-23T15:25:00+08:00",
+  "players": 0,
+  "transactions": {
+    "create": "0x01f4b024e4d8896f313170241c865731a9a95912798bc786c19d51c5a4097fab",
+    "approveBonus": "0xe41456becaf52a1c611504b1cbb4530f9d2bbf38c93b188ab5ba837ba706d19e",
+    "open": "0xfbba06b532167ba095652b0ee13110638489b4b8027c0a72163abe3bace9934f",
+    "revertedRegistration": "0xb85a24e673c693131cb0dd78351128b674e3d8fc9e1a581c6865a952d58d6261",
+    "cancel": "0x5e5e4aa173e342a1ec4e6f422ca8ec8fd193dd0c168f9d4e267e2ae6e2398e2b",
+    "organizerRefund": "0x5f149d78692b0427c200d74f46f1c60bda72b980d68c6aee1848e9f00fed5e51"
+  },
+  "refund": {"eth": "0.001", "lrt": "1", "recipient": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4", "mode": "direct transfer of both assets, no credit withdrawal required"},
+  "evidenceSource": "confirmed frontend state and deployed contract refundOrganizer implementation"
+}

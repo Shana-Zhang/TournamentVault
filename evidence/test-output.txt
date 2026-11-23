@@ -2,86 +2,86 @@
 > tournament-vault@1.0.0 test
 > hardhat test
 
-Compiled 20 Solidity files successfully (evm target: cancun).
 
 
   Fixed supply
-    √ T01: Mint the supply once to treasury (552ms)
-    √ T02: Reject invalid treasury and zero supply
-    √ T03: Reject token addresses without contract code
+    √ T01: Mint the supply once to treasury (927ms)
+    √ T02: Reject invalid treasury and zero supply (47ms)
+    √ T03: Reject token addresses without contract code (47ms)
 
   Creation and registration
-    √ V01: Create immutable rules and distinct roles
+    √ V01: Create immutable rules and distinct roles (40ms)
     √ V02: Reject zero and overlapping roles
     √ V03: Reject malformed prize shares and capacity
     √ V04: Reject invalid deadlines and objection windows
     √ V05: Require organizer approval and full LRT funding
     √ V06: Reject opening after registration deadline
-    √ V07: Register exact fee and preserve escrow (49ms)
+    √ V07: Register exact fee and preserve escrow (86ms)
     √ V08: Reject wrong fees and duplicate registration
     √ V09: Exclude privileged roles from playing
-    √ V10: Enforce exact maximum capacity (57ms)
+    √ V10: Enforce exact maximum capacity (70ms)
     √ V11: Enforce registration deadline boundary
-    √ V12: Lock at close and reject early or repeated locking (56ms)
+    √ V12: Lock at close and reject early or repeated locking (84ms)
     √ V13: Cancel automatically when too few players register
     √ V14: Permit a zero entry fee
 
   Results and disputes
-    √ R01: Only referee can submit one ranked result (61ms)
+    √ R01: Only referee can submit one ranked result (86ms)
     √ R02: Reject invalid ranking and empty evidence
     √ R03: Reject result at its exact deadline
-    √ R04: Do not submit or claim prizes before the proper state (49ms)
-    √ R05: Finalize only when objection window closes (44ms)
+    √ R04: Do not submit or claim prizes before the proper state (74ms)
+    √ R05: Finalize only when objection window closes (78ms)
     √ R06: Only registered players can raise a nonempty objection
     √ R07: Reject objection exactly at the closing timestamp
-    √ R08: Block ordinary finalization while a dispute is unresolved (45ms)
+    √ R08: Block ordinary finalization while a dispute is unresolved (80ms)
     √ R09: Resolver replaces ranking and settles once
     √ R10: Resolver can confirm the original ranking
     √ R11: Expired resolver cannot race timeout cancellation
 
   Settlement, refunds and accounting
-    √ F01: Allocate token prizes and organizer fees separately (89ms)
+    √ F01: Allocate token prizes and organizer fees separately (129ms)
     √ F02: Reject repeated prize and fee withdrawals
     √ F03: Reject zero recipients and unauthorized claims
-    √ F04: Recover fees after an abandoned populated tournament (55ms)
+    √ F04: Recover fees after an abandoned populated tournament (111ms)
     √ F05: Reject duplicate or unauthorized cancellation refunds
-    √ F06: Limit organizer cancellation to tournaments with no entrants (172ms)
-    √ F07: Reject cancellation or timeout after finalization (38ms)
-    √ F08: Recover abandoned drafts and result submissions (111ms)
-    √ F09: Assign rounding remainder to final rank
-    √ F10: Isolate liabilities across multiple tournaments (84ms)
-    √ F11: Rejected ETH delivery restores credit and allows another recipient (52ms)
+    √ F06: Limit organizer cancellation to tournaments with no entrants (291ms)
+    √ F07: Reject cancellation or timeout after finalization (76ms)
+    √ F08: Recover abandoned drafts and result submissions (153ms)
+    √ F09: Assign rounding remainder to final rank (39ms)
+    √ F10: Isolate liabilities across multiple tournaments (89ms)
+    √ F11: Rejected ETH delivery restores credit and allows another recipient (78ms)
     √ F12: Block a refund receiver reentering its ETH withdrawal
-    √ F13: Settle the maximum 32-rank result within the gas limit (207ms)
-    √ F14: Preserve liabilities when balances include unsolicited surplus (45ms)
+    √ F13: Settle the maximum 32-rank result within the gas limit (668ms)
+    √ F14: Preserve liabilities when balances include unsolicited surplus (92ms)
 
   Fixed-rate exchange
     √ X01: Quote the chosen rate exactly
     √ X02: Reject zero and unrepresentable redemption amounts
-    √ X03: Sell inventory for ETH at the fixed price (50ms)
+    √ X03: Sell inventory for ETH at the fixed price (78ms)
     √ X04: Reject empty buys and inventory overdraw
-    √ X05: Redeem LRT without burning and withdraw exact ETH (51ms)
+    √ X05: Redeem LRT without burning and withdraw exact ETH (85ms)
     √ X06: Reject insufficient ETH backing
-    √ X07: Rollback reserved credit when token transfer fails (39ms)
+    √ X07: Rollback reserved credit when token transfer fails (75ms)
     √ X08: Do not reuse ETH already promised to another seller
-    √ X09: Reject duplicate withdrawals and zero recipients (39ms)
+    √ X09: Reject duplicate withdrawals and zero recipients (59ms)
     √ X10: Restore redemption credit after rejected ETH payment
     √ X11: Block reentrant exchange withdrawal
     √ X12: Support buy and redeem round trips without value creation
 
   Local interface server
-    √ W01: Serve the interface and bundled script
-    √ W02: Reject requests for private configuration and project files (42ms)
+    √ W01: Serve the interface and bundled script (60ms)
+    √ W02: Reject requests for private configuration and project files (100ms)
     √ W03: Reject mutation methods on the static server
 
   TournamentVaultV3 ETH prize and optional LRT bonus
-    √ escrows the exact ETH prize at creation and rejects mismatch
-    √ splits ETH prize and optional LRT bonus by the same ranking shares
+    √ escrows the exact ETH prize at creation and rejects mismatch (41ms)
+    √ splits ETH prize and optional LRT bonus by the same ranking shares (39ms)
     √ allows zero LRT bonus and still pays the ETH prize
     √ returns the escrowed ETH and any funded LRT bonus after cancellation
     √ returns the ETH prize even when cancellation happens before the LRT bonus is funded
-    √ recovers expired drafts and open events and refunds registered players after a dispute timeout
-    √ restores credits on rejected ETH delivery and blocks prize-withdrawal reentry
+    √ recovers expired drafts and open events and refunds registered players after a dispute timeout (54ms)
+    √ restores credits on rejected ETH delivery and blocks prize-withdrawal reentry (49ms)
 
 
-  64 passing (3s)
+  64 passing (5s)
+

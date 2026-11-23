@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-20T09:06:28.201Z",
+  "intendedNetwork": "Sepolia",
+  "intendedChainId": 11155111,
+  "rpcConfigured": true,
+  "walletConfigured": true,
+  "verificationKeyConfigured": true,
+  "status": "RPC and funded wallet available",
+  "chainId": 11155111,
+  "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+  "balanceETH": "2.149929191968934583"
+}

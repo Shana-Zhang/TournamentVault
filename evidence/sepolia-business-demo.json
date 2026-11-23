@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-11-19T08:24:57.380Z",
+  "chainId": 11155111,
+  "block": 12167245,
+  "blockTimestamp": 1795076688,
+  "transactions": [
+    {
+      "label": "Fund exchange reserve",
+      "hash": "0xc07dba7da08c5f5a17390a86b9329b7d36620c757d52ef0330d62bd7cf49d205",
+      "status": 1,
+      "block": 12161970,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+      "valueWei": "1000000000000000",
+      "gasUsed": "22491",
+      "input": "0x"
+    },
+    {
+      "label": "Fund exchange LRT inventory",
+      "hash": "0x50f1653a56c49b32ab7d3d6b184913615575338b2b47edd98680fe63b21f59d5",
+      "status": 1,
+      "block": 12161982,
+      "from": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "to": "0xF258884763CEc4239F33A9bBf9f2c603Bb1b2D69",
+      "valueWei": "0",
+      "gasUsed": "140858",
+      "input": "0xa9059cbb000000000000000000000000207eaebd77e7bd41c1043f9db10397c5f18a0d2200000000000000000000000000000000000000000000021e19e0c9bab2400000"
+    }
+  ],
+  "exchange": "0x207EaebD77e7bd41c1043f9DB10397c5F18A0D22",
+  "inventoryLRT": "10000.0",
+  "reserveETH": "0.001",
+  "tournamentCount": "3",
+  "tournaments": [
+    {
+      "id": "1",
+      "state": "6",
+      "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "registrationDeadline": "1795074300",
+      "resultDeadline": "1795081500",
+      "prizeLRT": "1000.0",
+      "entryFeeETH": "0.001",
+      "playerCount": "0"
+    },
+    {
+      "id": "2",
+      "state": "6",
+      "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "registrationDeadline": "1795074300",
+      "resultDeadline": "1795081500",
+      "prizeLRT": "1000.0",
+      "entryFeeETH": "0.001",
+      "playerCount": "0"
+    },
+    {
+      "id": "3",
+      "state": "5",
+      "organizer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "referee": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "resolver": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "registrationDeadline": "1795074300",
+      "resultDeadline": "1795081500",
+      "prizeLRT": "1000.0",
+      "entryFeeETH": "0.001",
+      "playerCount": "3"
+    }
+  ],
+  "organizerLatestNonce": 25,
+  "organizerPendingNonce": 25
+}

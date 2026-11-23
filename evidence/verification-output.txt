@@ -1,0 +1,80 @@
+Compiled 19 Solidity files successfully (evm target: cancun).
+
+
+  Fixed supply
+    鈭?T01: Mint the supply once to treasury (469ms)
+    鈭?T02: Reject invalid treasury and zero supply
+    鈭?T03: Reject token addresses without contract code
+
+  Creation and registration
+    鈭?V01: Create immutable rules and distinct roles
+    鈭?V02: Reject zero and overlapping roles
+    鈭?V03: Reject malformed prize shares and capacity
+    鈭?V04: Reject invalid deadlines and objection windows
+    鈭?V05: Require organizer approval and full LRT funding
+    鈭?V06: Reject opening after registration deadline
+    鈭?V07: Register exact fee and preserve escrow (62ms)
+    鈭?V08: Reject wrong fees and duplicate registration
+    鈭?V09: Exclude privileged roles from playing
+    鈭?V10: Enforce exact maximum capacity
+    鈭?V11: Enforce registration deadline boundary
+    鈭?V12: Lock at close and reject early or repeated locking (39ms)
+    鈭?V13: Cancel automatically when too few players register
+    鈭?V14: Permit a zero entry fee
+
+  Results and disputes
+    鈭?R01: Only referee can submit one ranked result (44ms)
+    鈭?R02: Reject invalid ranking and empty evidence
+    鈭?R03: Reject result at its exact deadline
+    鈭?R04: Do not submit or claim prizes before the proper state (43ms)
+    鈭?R05: Finalize only when objection window closes (49ms)
+    鈭?R06: Only registered players can raise a nonempty objection
+    鈭?R07: Reject objection exactly at the closing timestamp
+    鈭?R08: Block ordinary finalization while a dispute is unresolved (45ms)
+    鈭?R09: Resolver replaces ranking and settles once
+    鈭?R10: Resolver can confirm the original ranking
+    鈭?R11: Expired resolver cannot race timeout cancellation
+
+  Settlement, refunds and accounting
+    鈭?F01: Allocate token prizes and organizer fees separately (70ms)
+    鈭?F02: Reject repeated prize and fee withdrawals
+    鈭?F03: Reject zero recipients and unauthorized claims
+    鈭?F04: Cancel and recover exact player fees and organizer tokens (66ms)
+    鈭?F05: Reject duplicate or unauthorized cancellation refunds
+    鈭?F06: Permit organizer cancellation in every nonterminal state (204ms)
+    鈭?F07: Reject cancellation or timeout after finalization (97ms)
+    鈭?F08: Recover abandoned drafts and result submissions (106ms)
+    鈭?F09: Assign rounding remainder to final rank
+    鈭?F10: Isolate liabilities across multiple tournaments (90ms)
+    鈭?F11: Rejected ETH delivery restores credit and allows another recipient (56ms)
+    鈭?F12: Block a refund receiver reentering its ETH withdrawal (51ms)
+    鈭?F13: Settle the maximum 32-rank result within the gas limit (409ms)
+    鈭?F14: Preserve liabilities when balances include unsolicited surplus (51ms)
+
+  Fixed-rate exchange
+    鈭?X01: Quote the chosen rate exactly
+    鈭?X02: Reject zero and unrepresentable redemption amounts
+    鈭?X03: Sell inventory for ETH at the fixed price (47ms)
+    鈭?X04: Reject empty buys and inventory overdraw
+    鈭?X05: Redeem LRT without burning and withdraw exact ETH (51ms)
+    鈭?X06: Reject insufficient ETH backing
+    鈭?X07: Rollback reserved credit when token transfer fails
+    鈭?X08: Do not reuse ETH already promised to another seller
+    鈭?X09: Reject duplicate withdrawals and zero recipients (39ms)
+    鈭?X10: Restore redemption credit after rejected ETH payment
+    鈭?X11: Block reentrant exchange withdrawal
+    鈭?X12: Support buy and redeem round trips without value creation
+
+  Local interface server
+    鈭?W01: Serve the interface and bundled script
+    鈭?W02: Reject requests for private configuration and project files (45ms)
+    鈭?W03: Reject mutation methods on the static server
+
+
+  57 passing (3s)
+
+Compiler: 0.8.26+commit.8a97fa7a.Emscripten.clang; project AST nodes: 1888; compiler errors: 0
+LRTExchange: 2513 runtime bytes (limit 24576)
+LearningRewardToken: 1764 runtime bytes (limit 24576)
+TournamentVault: 11804 runtime bytes (limit 24576)
+Findings: {"Review":19}. Review items require the manual analysis in audit/security-review.md.

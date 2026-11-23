@@ -1,0 +1,60 @@
+{
+  "network": "sepolia",
+  "vault": "0xbb74eEca21239034cCdB3e9244256DAd7A664FDb",
+  "tournamentId": 1,
+  "ethPrize": "0.001",
+  "lrtBonus": "1",
+  "entryFeeEth": "0.001",
+  "registrationDeadline": "2026-11-23T16:05:00+08:00",
+  "resultDeadline": "2026-11-23T18:05:00+08:00",
+  "transactions": {
+    "create": "0x9ccca6af31860795088ebdc0b30606c452fece59ba132fe3314d180a300c35ac",
+    "approveBonus": "0xf32513973d08be22d05ccbbd502c792f3cafa84dd0caa7772c2d2ecc8a7f9f7c",
+    "open": "0xe212ec229f6b96d71f1090aa0eb37f20f6b22ad59b96e39efa4f7182e5ce14c8",
+    "registerAccount4": "0x0252ff296baeac610fa3e213a413a0349d8823f51269713af5207d38f7a5543f",
+    "registerAccount5": "0x672d5eead6dc383a83e5d8993ef6b1ca91d854d0ff87d3ddb45cf9d9cb9a7792",
+    "registerAccount6": "0x088ed53327b197c550d9c03b40660d86921087856592572416199c04d0dee7ee",
+    "lock": "0xa6baac3b148e5aff215ea28ba8d82accb9ca263d51b45048cab60986357be1d3",
+    "result": "0xc5da17edfcc6becdc3690570816bfed5b7ed2c8779ee522ddb45511e2d316c55",
+    "objection": "0xe9b2b1f1290c1b932413abb9d742f801b0b7a0802daef4ea2de44af89778e009",
+    "resolution": "0x0d2c16d791ecabe0a784c12fd5cffc89c478d9e01547edd37bd8857f32b30ef0",
+    "prizeAccount5": "0x319cec6c7635ba0909a92fea33a4926ef0293788cdb32e883f26a75f721bf469",
+    "prizeAccount4": "0x665fda9a881d58ca87e8fda89382257b15fab1b9510fe044d9cda0517b8e02c2",
+    "prizeAccount6": "0xdb4613538e6ccdc58e6af752a88863aea22a3ad6303066a5d83513637e1d6082",
+    "organizerFeeWithdrawal": "0xa9c06954b7737611e55a32c4d11f58dfbaa272a722f4a04efaa86bfc76282708"
+  },
+  "status": "main-demo-complete",
+  "pending": [],
+  "exchange": {
+    "address": "0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B",
+    "inventoryLrt": "10000",
+    "inventoryTransaction": "0xa79cd8b27282ce43382f64636abad2f8f055e95a5239ce728bc312d9ba7279e8",
+    "status": "buy-redeem-withdraw-confirmed",
+    "reserveEth": "0.001",
+    "reserveTransaction": "0xa92a4ef92a790a88a5bc1a48831d35a3bab4f4fae23722916c810373dd7f5d54",
+    "buyTransaction": "0x4550e36258c541d9f027d82a99ecfe0cf1e412761586ee6a8ed779deae9b9fd3",
+    "approveTransaction": "0x4279ee9cd1da0768623c4a9bac98db6d5992edf66f0d5218bb074c0068472f84",
+    "redeemTransaction": "0xdcdd259f17613e640c602b380fdff67eb62c02d8c5bf5413d53684a339bfe721",
+    "withdrawTransaction": "0xf63d0ecd75177395ad919ae423c6fb0ef9473ce2d5bcb956cb0ee75502b0b6df"
+  },
+  "screenshots": [
+    "evidence/sepolia-v3-fresh-roster-exchange.png",
+    "evidence/sepolia-v3-fresh-disputed.png",
+    "evidence/sepolia-v3-fresh-finalized-credit.png"
+  ],
+  "preliminaryRanking": [
+    "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+    "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+    "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
+  ],
+  "refereeEvidence": "V3 fresh Sepolia demo: preliminary referee ranking accounts 4, 5, 6; simulated score review follows.",
+  "objectionDeadline": "2026-11-23T16:17:12+08:00",
+  "objectionEvidence": "V3 fresh Sepolia demo: account 6 requests score review; simulated correction places account 5 ahead of account 4.",
+  "resolutionDeadline": "2026-11-23T16:39:00+08:00",
+  "finalRanking": [
+    "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+    "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+    "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
+  ],
+  "resolutionEvidence": "V3 fresh Sepolia demo: simulated score review accepted; final ranking accounts 5, 4, 6. ETH prize and LRT bonus allocated 50/30/20."
+}

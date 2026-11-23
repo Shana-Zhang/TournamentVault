@@ -1,0 +1,66 @@
+{
+  "chainId": 11155111,
+  "sender": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+  "targetETH": "0.01",
+  "accounts": [
+    {
+      "account": 2,
+      "role": "Referee",
+      "address": "0x95A6f7B1dEa4e49503861b4D5e98266c50EBAA0e",
+      "balanceETH": "0.01",
+      "topUpETH": "0.0",
+      "status": "Already funded"
+    },
+    {
+      "account": 3,
+      "role": "Resolver",
+      "address": "0x030aF0343d109Ae1130391b5b440dACE4E2DF78f",
+      "balanceETH": "0.01",
+      "topUpETH": "0.01",
+      "transactionHash": "0x615a0c7e0a5589e866aebf05dc97c2ca842e89905cabc3bd54a083059b5b8fd3",
+      "sentETH": "0.01",
+      "status": "Confirmed",
+      "block": 12162022,
+      "gasUsed": "204600"
+    },
+    {
+      "account": 4,
+      "role": "Player 1",
+      "address": "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
+      "balanceETH": "0.01",
+      "topUpETH": "0.01",
+      "transactionHash": "0x08b0f25d2a2abe86598d7b898708ca63a18c9a56914b853e22f27035f138503c",
+      "sentETH": "0.01",
+      "status": "Confirmed",
+      "block": 12162023,
+      "gasUsed": "204600"
+    },
+    {
+      "account": 5,
+      "role": "Player 2",
+      "address": "0xA296C8C788079aB0CE0725daa350587cdED0d7F0",
+      "balanceETH": "0.01",
+      "topUpETH": "0.01",
+      "transactionHash": "0xdc343ff34f864f4445e68f9572be3f0ca78dc3b0bca15242fe37530b6cf48a75",
+      "sentETH": "0.01",
+      "status": "Confirmed",
+      "block": 12162024,
+      "gasUsed": "204600"
+    },
+    {
+      "account": 6,
+      "role": "Player 3",
+      "address": "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2",
+      "balanceETH": "0.01",
+      "topUpETH": "0.01",
+      "transactionHash": "0xa396c36a73059850249e08b7214b7da6a01dd3aa47792573de0fedc7e28bbc0d",
+      "sentETH": "0.01",
+      "status": "Confirmed",
+      "block": 12162025,
+      "gasUsed": "204600"
+    }
+  ],
+  "checkedAt": "2026-11-18T14:23:59.549Z",
+  "plannedTotalETH": "0.04",
+  "completedAt": "2026-11-18T14:24:52.650Z"
+}

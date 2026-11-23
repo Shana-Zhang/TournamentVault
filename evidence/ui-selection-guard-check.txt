@@ -1,0 +1,1 @@
+Tournament selection changed. Click Load tournament before using tournament actions.

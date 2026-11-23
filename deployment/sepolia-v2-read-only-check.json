@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-11-20T07:40:02.272Z",
+  "mode": "Read-only",
+  "deploymentRecord": "sepolia-v2",
+  "contracts": [
+    {
+      "name": "LearningRewardToken",
+      "address": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+      "receiptSuccess": true,
+      "deploymentBlock": 12173877,
+      "receiptAddressMatches": true,
+      "confirmations": 33,
+      "runtimeBytes": 1764,
+      "creationHashMatchesRecord": true,
+      "deploymentInputMatchesLocal": true,
+      "runtimeMatchesLocalExcludingImmutables": true,
+      "balanceETH": "0.0",
+      "state": {
+        "name": "Learning Reward Token",
+        "symbol": "LRT",
+        "decimals": "18",
+        "totalSupplyLRT": "1000000.0",
+        "deployerBalanceLRT": "1000000.0",
+        "TournamentVaultBalanceLRT": "0.0",
+        "LRTExchangeBalanceLRT": "0.0"
+      },
+      "explorer": {
+        "httpStatus": 200,
+        "apiStatus": "1",
+        "verified": true,
+        "contractName": "LearningRewardToken",
+        "compilerVersion": "v0.8.26+commit.8a97fa7a",
+        "optimizationUsed": "1",
+        "runs": "200",
+        "allSubmittedSourcesMatchLocalBuild": true,
+        "constructorArgumentsMatch": false
+      }
+    },
+    {
+      "name": "TournamentVault",
+      "address": "0x9ab90329fdd0D1B3729c6eAb4bf78F354d63E3de",
+      "receiptSuccess": true,
+      "deploymentBlock": 12173879,
+      "receiptAddressMatches": true,
+      "confirmations": 31,
+      "runtimeBytes": 11996,
+      "creationHashMatchesRecord": true,
+      "deploymentInputMatchesLocal": true,
+      "runtimeMatchesLocalExcludingImmutables": true,
+      "balanceETH": "0.0",
+      "state": {
+        "token": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+        "tournamentCount": "1",
+        "ethLiability": "0",
+        "tokenLiability": "0"
+      },
+      "tokenMatches": true,
+      "explorer": {
+        "httpStatus": 200,
+        "apiStatus": "1",
+        "verified": true,
+        "contractName": "TournamentVault",
+        "compilerVersion": "v0.8.26+commit.8a97fa7a",
+        "optimizationUsed": "1",
+        "runs": "200",
+        "allSubmittedSourcesMatchLocalBuild": true,
+        "constructorArgumentsMatch": true
+      }
+    },
+    {
+      "name": "LRTExchange",
+      "address": "0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27",
+      "receiptSuccess": true,
+      "deploymentBlock": 12173881,
+      "receiptAddressMatches": true,
+      "confirmations": 29,
+      "runtimeBytes": 2513,
+      "creationHashMatchesRecord": true,
+      "deploymentInputMatchesLocal": true,
+      "runtimeMatchesLocalExcludingImmutables": true,
+      "balanceETH": "0.0",
+      "state": {
+        "token": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+        "TOKEN_UNITS_PER_WEI": "1000000000",
+        "totalCredits": "0",
+        "availableReserve": "0"
+      },
+      "tokenMatches": true,
+      "explorer": {
+        "httpStatus": 200,
+        "apiStatus": "1",
+        "verified": true,
+        "contractName": "LRTExchange",
+        "compilerVersion": "v0.8.26+commit.8a97fa7a",
+        "optimizationUsed": "1",
+        "runs": "200",
+        "allSubmittedSourcesMatchLocalBuild": true,
+        "constructorArgumentsMatch": false
+      }
+    }
+  ],
+  "chainId": 11155111,
+  "blockNumber": 12173909
+}

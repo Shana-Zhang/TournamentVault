@@ -1,0 +1,23 @@
+{
+  "network": "sepolia",
+  "vault": "0x86b64B582dB3F6DD9bf43A923300B2d150D72D17",
+  "tournamentId": 1,
+  "status": "registration-open-three-players-confirmed",
+  "ethPrize": "0.001",
+  "lrtBonus": "1",
+  "entryFeeEth": "0.001",
+  "registrationDeadline": "2026-11-23T16:15:00+08:00",
+  "resultDeadline": "2026-11-23T18:15:00+08:00",
+  "disputeWindowMinutes": 10,
+  "resolutionWindowMinutes": 30,
+  "transactions": {
+    "create": "0x4686bdaf8daca5cbd55fb7bdd8f30606bdf55e9b800f35dbbb6ca075dd808464",
+    "approveBonus": "0x0465f88f4aac8de0eaf3198c6f083799f5b0e8bd852b1cc64eac7d9a54fbeedc",
+    "open": "0x391f5d98413aeeac8f1ed9622b59495f129a37e09cbe70b1e62b41095d5b57f7",
+    "registerAccount4": "0x743a36ad0913114bd2591642607e4c35764cfdb96b9c6649bfd9f8e8bed93878",
+    "registerAccount5": "0x47fc8ca7bbf76e636e4013035d29f218da01a035fdd35a615328a501dab9037b",
+    "registerAccount6": "0xec6d4a8ef878d3d30466c5d94180942c6b5c0201439cde30f6bf22586930776f"
+  },
+  "evidenceSource": "MetaMask-signed transactions and confirmed frontend state",
+  "pending": ["lock after registration deadline", "referee result", "objection", "resolution", "ETH and LRT withdrawals", "report screenshots and final documentation update"]
+}

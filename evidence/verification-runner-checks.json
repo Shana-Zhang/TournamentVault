@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-18T09:30:54.342Z",
+  "results": [
+    {
+      "scenario": "Timeout recovers; verified contracts skipped",
+      "status": "Pass",
+      "requests": 2
+    },
+    {
+      "scenario": "Permanent error is not retried",
+      "status": "Pass",
+      "requests": 1
+    },
+    {
+      "scenario": "Repeated timeout stops after three attempts",
+      "status": "Pass",
+      "requests": 3
+    },
+    {
+      "scenario": "Previously completed explorer verification is accepted",
+      "status": "Pass",
+      "requests": 1
+    }
+  ]
+}

@@ -68,9 +68,9 @@ npm run verify:sepolia:v3
 npm run check:sepolia:v3
 ```
 
-V1 and V2 deployment records remain unchanged. V3 has its own deployment script and `deployment/sepolia-v3.json` record; the token and exchange are reused, and only the new vault is deployed. Never rerun a completed deployment script.
+V1 and V2 deployment records remain unchanged. V3 has its own deployment script and `deployment/sepolia-v3.json` record; the CLI upgrade script reuses token/exchange contracts. The final recorded deployment instead uses the browser wallet flow in /deploy.html to deploy all three contracts afresh. Never rerun a completed deployment script.
 
-V2 remains recorded in `deployment/sepolia-v2.json`; V1 remains in `deployment/sepolia.json`. V3 records its newly deployed vault alongside the reused token and exchange in `deployment/sepolia-v3.json`. Verification updates the selected version record only after explorer confirmation. The exchange remains separate from tournament prizes; its redemption requires sufficient ETH reserves.
+V2 remains recorded in `deployment/sepolia-v2.json`; V1 remains in `deployment/sepolia.json`. V3 records the final newly deployed token, vault and exchange in `deployment/sepolia-v3.json`. Verification updates the selected version record only after explorer confirmation. The exchange remains separate from tournament prizes; its redemption requires sufficient ETH reserves.
 
 On Windows, use the `deploy:sepolia:v3`, `verify:sepolia:v3` and `check:sepolia:v3` scripts for V3. Deployment transactions are recorded, and a saved V3 submission blocks duplicate deployment. Existing V1 and V2 addresses are never overwritten.
 
@@ -96,7 +96,7 @@ The contracts use OpenZeppelin ERC20, SafeERC20, Math and ReentrancyGuard. Payou
 npm run package
 ```
 
-The resulting `submission/21317896_ZhangShihan_CSIT5760_FinalProject.zip` excludes dependencies, local secrets, caches, superseded working reports and repository metadata. V1/V2 deployment, source verification and historical Sepolia workflow evidence are complete. V3 has seven dedicated passing local prize-flow tests, is deployed and source verified, and reuses the existing token and exchange. The full suite has 64 passing scenarios. The current V3 vault has no tournaments because the demonstration prize amounts remain unfinalized. The final Word/PDF report is included with the submission files.
+The resulting `submission/21317896_ZhangShihan_CSIT5760_FinalProject.zip` excludes dependencies, local secrets, caches, superseded working reports and repository metadata. V1/V2 deployment, source verification and historical Sepolia workflow evidence are complete. V3 has seven dedicated passing local prize-flow tests, is deployed and source verified, and records a fresh deployment of all three contracts. The full suite has 64 passing scenarios. The final V3 demonstration used newly deployed token, vault and exchange contracts on 23 November 2026. Tournament #1 escrowed 0.001 ETH and 1 LRT bonus, with three 0.001 ETH entry fees. The referee submitted accounts 4, 5, 6; account 6 raised an objection; the resolver corrected the ranking to accounts 5, 4, 6. The 50/30/20 shares paid 0.0005/0.0003/0.0002 ETH and 0.5/0.3/0.2 LRT. All three prizes and 0.003 ETH organizer fees were withdrawn. A separate exchange demonstration bought 500 LRT for 0.0000005 ETH, approved and redeemed the tokens, and withdrew the ETH credit. The recorded 20 lifecycle and exchange receipts succeeded. Final player prize credits and account 5 exchange credit are zero. These small test amounts are the demonstrated terms; editable UI defaults are not event commitments. The final Word/PDF report is included with the submission files.
 
 The wallet interface lists connected public addresses so roles can be selected explicitly. Changing a tournament number clears the previously loaded data; load the selected tournament before using its actions. To reproduce only the final public read-only snapshot without loading credentials, run `node scripts/check-tournament-demo.js --public-rpc`. Existing contracts do not require redeployment.
 
@@ -106,3 +106,8 @@ The wallet interface lists connected public addresses so roles can be selected e
 - Hardhat 2 configuration: https://v2.hardhat.org/hardhat-runner/docs/config
 - Solidity security considerations: https://docs.soliditylang.org/en/latest/security-considerations.html
 - ethers documentation: https://docs.ethers.org/v6/
+
+
+Final review: docs/final-design-review.md. Public receipts and final balances: evidence/sepolia-v3-final-snapshot.json. Start with npm ci, npm run compile, npm test, npm run config:check, then npm run serve; open http://127.0.0.1:8080/ with MetaMask on Sepolia. Use the recorded contracts for read-only review.
+
+

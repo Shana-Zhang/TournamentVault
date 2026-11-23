@@ -3,6 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
 const allow = {
+  '/deploy.html': ['ui/deploy.html', 'text/html; charset=utf-8'],
+  '/deploy-wallet.js': ['ui/deploy-wallet.js', 'text/javascript; charset=utf-8'],
+  '/deploy-artifacts.json': ['ui/deploy-artifacts.json', 'application/json'],
   '/': ['ui/index.html', 'text/html; charset=utf-8'],
   '/app.js': ['ui/app.js', 'text/javascript; charset=utf-8'],
   '/style.css': ['ui/style.css', 'text/css; charset=utf-8'],

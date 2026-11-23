@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-19T08:25:35.764129+00:00",
+  "pageCount": 24,
+  "abstractWordCount": 199,
+  "visualReview": "All 24 pages inspected; final revision changed pages 3, 11, 12, 23, 24 re-inspected; other page images are pixel-identical to reviewed revision.",
+  "renderer": "Installed Microsoft Word PDF export and bundled Poppler; packaged renderer missing LibreOffice was previously diagnosed.",
+  "tableOfContentsUpdated": true,
+  "sourceExactlyReproduced": [
+    "LearningRewardToken",
+    "TournamentVault",
+    "LRTExchange"
+  ],
+  "referenceTemplateUnchanged": true,
+  "referenceSHA256": "850646887d548e454390d003ec05fb434273b322c750aa15423d276259a967fe",
+  "files": {
+    "TournamentVault_Final_Report.docx": {
+      "bytes": 282534,
+      "sha256": "76bc1da77852742c05d92274188326d5b9d6b199b209a56e22b8df601f139fca"
+    },
+    "TournamentVault_Final_Report.pdf": {
+      "bytes": 703765,
+      "sha256": "ca24dd9856afe3655379604ef8f348c0bd9ba671b5fb963c505a6a6c27a7f15c"
+    }
+  }
+}

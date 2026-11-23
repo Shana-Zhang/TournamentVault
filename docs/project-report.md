@@ -7,7 +7,7 @@
 | Student ID | 21317896 |
 | Course | CSIT5760 Blockchain and Smart Contracts |
 | Instructor | Pritom Rajkhowa |
-| Implementation review date | 20 November 2026 |
+| Implementation review date | 23 November 2026 |
 | Public deployment | V3 TournamentVault deployed and source verified; V1/V2 retained as historical versions |
 | Repository URL | https://github.com/Shana-Zhang/TournamentVault |
 
@@ -134,17 +134,17 @@ The intended public network is Ethereum Sepolia, chain ID 11155111. The deployme
 
 ### 4.2 Deployment Information
 
-Network: Sepolia. Chain ID: 11155111. Deployer: 0xdE3d23a1245f07859279b759b528615Eb55BcAc4. Deployment completed at 2026-11-20T09:07:27.725Z UTC. Compiler: v0.8.26+commit.8a97fa7a. Optimizer: enabled, 200 runs. EVM: Cancun.
+Network: Sepolia. Chain ID: 11155111. Deployer: 0xdE3d23a1245f07859279b759b528615Eb55BcAc4. Deployment completed at 2026-11-23T07:43:03.945Z UTC. Compiler: v0.8.26+commit.8a97fa7a. Optimizer: enabled, 200 runs. EVM: Cancun.
 
 | Contract | Address | Transaction | Block | Source verification |
 | --- | --- | --- | --- | --- |
-| LearningRewardToken | [0x381B1b215dee83Dee9b899da0D012Fc2657750F9](https://sepolia.etherscan.io/address/0x381B1b215dee83Dee9b899da0D012Fc2657750F9#code) | [0x7b39736dcb0e869f2307cb28fa28f20b12eb94e3d9af387d7bb9404a1c6fe578](https://sepolia.etherscan.io/tx/0x7b39736dcb0e869f2307cb28fa28f20b12eb94e3d9af387d7bb9404a1c6fe578) | 12173877 | Verified |
-| TournamentVaultV3 | [0x86b64B582dB3F6DD9bf43A923300B2d150D72D17](https://sepolia.etherscan.io/address/0x86b64B582dB3F6DD9bf43A923300B2d150D72D17#code) | [0xff3b7b879e05702902dcd994c43ddb82febe12e02d568423e84626e72408094d](https://sepolia.etherscan.io/tx/0xff3b7b879e05702902dcd994c43ddb82febe12e02d568423e84626e72408094d) | 12174303 | Verified |
-| LRTExchange | [0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27](https://sepolia.etherscan.io/address/0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27#code) | [0x45d7afd86c031849b4d419b295ba082e8202d2ae0e17b90631a3e911a5cd4fc0](https://sepolia.etherscan.io/tx/0x45d7afd86c031849b4d419b295ba082e8202d2ae0e17b90631a3e911a5cd4fc0) | 12173881 | Verified |
+| LearningRewardToken | [0xE6b0239029382019323daca86A798364AEc5E637](https://sepolia.etherscan.io/address/0xE6b0239029382019323daca86A798364AEc5E637#code) | [0xe67c367cecab257cccce92c4f33ace4ffd166c47c20d82e39d30defd01df3557](https://sepolia.etherscan.io/tx/0xe67c367cecab257cccce92c4f33ace4ffd166c47c20d82e39d30defd01df3557) | 12194297 | Verified |
+| TournamentVaultV3 | [0xbb74eEca21239034cCdB3e9244256DAd7A664FDb](https://sepolia.etherscan.io/address/0xbb74eEca21239034cCdB3e9244256DAd7A664FDb#code) | [0xed0e2fbc6af643618e19568f3a6480c07531e127878b2afaf999b06228f01dc3](https://sepolia.etherscan.io/tx/0xed0e2fbc6af643618e19568f3a6480c07531e127878b2afaf999b06228f01dc3) | 12194299 | Verified |
+| LRTExchange | [0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B](https://sepolia.etherscan.io/address/0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B#code) | [0x1483bae24d47bfcaabbc5f83bc1265076a7a49931aefac0cdf9a1cb5cd5dc31a](https://sepolia.etherscan.io/tx/0x1483bae24d47bfcaabbc5f83bc1265076a7a49931aefac0cdf9a1cb5cd5dc31a) | 12194305 | Verified |
 
 ### 4.3 Etherscan Verification
 
-V3 token, vault and exchange sources are verified on Etherscan. The V3 read-only snapshot confirms the new vault's receipt, exact constructor input, local runtime bytecode match and zero tournament/ETH/token liabilities. The reused token and exchange retain their previous verified deployment records. See `deployment/sepolia-v3.json`, `deployment/sepolia-v3-read-only-check.json` and `deployment/source-match.json`.
+All three contract sources are verified on Etherscan. The first request used a JavaScript-specific compiler suffix and was rejected. The compiler label has been corrected to the canonical version. Fresh compilation produces creation bytecode hashes identical to the deployment records; no redeployment is required for this metadata correction. The verifier records success only after a successful explorer response. See docs/verification-fix.md and deployment/source-match.json.
 
 ## 5 Test Cases and Validation
 
@@ -196,7 +196,7 @@ The local project implements fixed-rule ETH prize escrow, optional LRT bonus, ex
 
 ### 7.2 Future Work
 
-The historical settlement and exchange demonstration used the original V1 Sepolia contracts. V2 is separately deployed and verified with participant-protective cancellation. V3 changes the prize model to ETH plus optional LRT bonus and is deployed and source verified at its own vault address. The recorded V3 snapshot has no tournaments because the demonstration amounts remain unfinalized. Further improvements could include multisignature dispute governance, signed structured evidence, reserve coverage monitoring and property-based state-machine testing. Mainnet readiness and real-world result integrity are outside the evidence provided by this coursework project.
+The historical settlement and exchange demonstration used the original V1 Sepolia contracts. V2 is separately deployed and verified with participant-protective cancellation. V3 changes the prize model to ETH plus optional LRT bonus and is deployed and source verified at its own vault address. The final V3 demonstration used newly deployed token, vault and exchange contracts on 23 November 2026. Tournament #1 escrowed 0.001 ETH and 1 LRT bonus, with three 0.001 ETH entry fees. The referee submitted accounts 4, 5, 6; account 6 raised an objection; the resolver corrected the ranking to accounts 5, 4, 6. The 50/30/20 shares paid 0.0005/0.0003/0.0002 ETH and 0.5/0.3/0.2 LRT. All three prizes and 0.003 ETH organizer fees were withdrawn. A separate exchange demonstration bought 500 LRT for 0.0000005 ETH, approved and redeemed the tokens, and withdrew the ETH credit. The recorded 20 lifecycle and exchange receipts succeeded. Final player prize credits and account 5 exchange credit are zero. These small test amounts are the demonstrated terms; editable UI defaults are not event commitments. Further improvements could include multisignature dispute governance, signed structured evidence, reserve coverage monitoring and property-based state-machine testing. Mainnet readiness and real-world result integrity are outside the evidence provided by this coursework project.
 
 ## References
 

@@ -1,0 +1,63 @@
+{
+  "network": "sepolia",
+  "chainId": "11155111",
+  "version": "V3 fresh deployment",
+  "supply": "1000000",
+  "rate": "1000000000",
+  "contracts": [
+    {
+      "name": "LearningRewardToken",
+      "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "transactionHash": "0xe67c367cecab257cccce92c4f33ace4ffd166c47c20d82e39d30defd01df3557",
+      "constructorArguments": [
+        "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+        "1000000000000000000000000"
+      ],
+      "creationBytecodeHash": "0xd3c5640a9ee525eaf377e6b04a23157c4554636b0d5e5c2739cd756da7022e8d",
+      "deploymentStatus": "Confirmed",
+      "verification": "Not yet verified",
+      "address": "0xE6b0239029382019323daca86A798364AEc5E637",
+      "blockNumber": 12194297,
+      "gasUsed": "3396753",
+      "explorer": "https://sepolia.etherscan.io/address/0xE6b0239029382019323daca86A798364AEc5E637#code"
+    },
+    {
+      "name": "TournamentVaultV3",
+      "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "transactionHash": "0xed0e2fbc6af643618e19568f3a6480c07531e127878b2afaf999b06228f01dc3",
+      "constructorArguments": [
+        "0xE6b0239029382019323daca86A798364AEc5E637"
+      ],
+      "creationBytecodeHash": "0x81942ed76c75eb14c1cbfb678be8bb8cb1b12047a4b5509e103a84dccf3d36c4",
+      "deploymentStatus": "Confirmed",
+      "verification": "Not yet verified",
+      "address": "0xbb74eEca21239034cCdB3e9244256DAd7A664FDb",
+      "blockNumber": 12194299,
+      "gasUsed": "20011474",
+      "explorer": "https://sepolia.etherscan.io/address/0xbb74eEca21239034cCdB3e9244256DAd7A664FDb#code"
+    },
+    {
+      "name": "LRTExchange",
+      "deployer": "0xdE3d23a1245f07859279b759b528615Eb55BcAc4",
+      "transactionHash": "0x1483bae24d47bfcaabbc5f83bc1265076a7a49931aefac0cdf9a1cb5cd5dc31a",
+      "constructorArguments": [
+        "0xE6b0239029382019323daca86A798364AEc5E637"
+      ],
+      "creationBytecodeHash": "0xdf7295d63bb93b421d43b438097396e34ac52fb70cbbe64a74a36344188f3870",
+      "deploymentStatus": "Confirmed",
+      "verification": "Not yet verified",
+      "address": "0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B",
+      "blockNumber": 12194305,
+      "gasUsed": "4209957",
+      "explorer": "https://sepolia.etherscan.io/address/0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B#code"
+    }
+  ],
+  "deployedAt": "2026-11-23T07:41:12.505Z",
+  "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "evmVersion": "cancun",
+  "completedAt": "2026-11-23T07:43:03.945Z"
+}

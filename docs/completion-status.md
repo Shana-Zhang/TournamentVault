@@ -18,7 +18,7 @@ Updated 20 November 2026. All project files are under E:\BC_Project.
 | Slither | V2 and V3 reviewed | 0.11.6; V2: 13 findings; V3 full scan: 28 combined, no High; audit/slither-v3-review.md |
 | Sepolia RPC preflight | Passed in the Windows terminal | Sepolia chain and funded wallet confirmed |
 | Explorer API key | Used successfully for public source verification | All three contracts recorded as Verified |
-| Public deployment and verification | V1/V2 records retained; V3 new vault deployed and verified | deployment/sepolia-v3.json; docs/deployment-information.md |
+| Public deployment and verification | Three contracts deployed; 3/3 source verified | docs/deployment-information.md |
 | Seven report chapters | Complete with final public evidence | docs/project-report.md |
 | Formal Word and PDF report | Refreshed from supplied course template; exported and visually checked | docs/TournamentVault_Final_Report.docx and .pdf |
 | Submission archive | Rebuilt and passed integrity/secret checks | submission/21317896_ZhangShihan_CSIT5760_FinalProject.zip |

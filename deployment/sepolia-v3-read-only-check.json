@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-11-20T09:09:16.594Z",
+  "checkedAt": "2026-11-23T07:44:21.126Z",
   "mode": "Read-only",
   "deploymentRecord": "sepolia-v3",
   "contracts": [
     {
       "name": "LearningRewardToken",
-      "address": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+      "address": "0xE6b0239029382019323daca86A798364AEc5E637",
       "receiptSuccess": true,
-      "deploymentBlock": 12173877,
+      "deploymentBlock": 12194297,
       "receiptAddressMatches": true,
-      "confirmations": 437,
+      "confirmations": 14,
       "runtimeBytes": 1764,
       "creationHashMatchesRecord": true,
       "deploymentInputMatchesLocal": true,
@@ -39,18 +39,18 @@
     },
     {
       "name": "TournamentVaultV3",
-      "address": "0x86b64B582dB3F6DD9bf43A923300B2d150D72D17",
+      "address": "0xbb74eEca21239034cCdB3e9244256DAd7A664FDb",
       "receiptSuccess": true,
-      "deploymentBlock": 12174303,
+      "deploymentBlock": 12194299,
       "receiptAddressMatches": true,
-      "confirmations": 11,
+      "confirmations": 12,
       "runtimeBytes": 12731,
       "creationHashMatchesRecord": true,
       "deploymentInputMatchesLocal": true,
       "runtimeMatchesLocalExcludingImmutables": true,
       "balanceETH": "0.0",
       "state": {
-        "token": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+        "token": "0xE6b0239029382019323daca86A798364AEc5E637",
         "tournamentCount": "0",
         "ethLiability": "0",
         "tokenLiability": "0"
@@ -71,18 +71,18 @@
     },
     {
       "name": "LRTExchange",
-      "address": "0xFeC61ef2df32fc1f3FDe853F6757E34567f4CB27",
+      "address": "0xEc6dc026d5E0a9F50fDcd42d21EA724a751a1e6B",
       "receiptSuccess": true,
-      "deploymentBlock": 12173881,
+      "deploymentBlock": 12194305,
       "receiptAddressMatches": true,
-      "confirmations": 433,
+      "confirmations": 6,
       "runtimeBytes": 2513,
       "creationHashMatchesRecord": true,
       "deploymentInputMatchesLocal": true,
       "runtimeMatchesLocalExcludingImmutables": true,
       "balanceETH": "0.0",
       "state": {
-        "token": "0x381B1b215dee83Dee9b899da0D012Fc2657750F9",
+        "token": "0xE6b0239029382019323daca86A798364AEc5E637",
         "TOKEN_UNITS_PER_WEI": "1000000000",
         "totalCredits": "0",
         "availableReserve": "0"
@@ -103,5 +103,5 @@
     }
   ],
   "chainId": 11155111,
-  "blockNumber": 12174313
+  "blockNumber": 12194310
 }

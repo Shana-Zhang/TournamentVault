@@ -1,8 +1,8 @@
 # Slither Findings Review
 
-Current-source rerun on 18 November 2026: `audit/slither-current.json` reports success=true and the same 13 finding IDs as `slither-run-20261118.json`. Output is preserved in `audit/slither-current-output.txt`. The process exit was -1 with findings; JSON analysis success and detector contents were checked separately. No production source changes were made.
+Current V2-source rerun on 20 November 2026: `audit/slither-v2.json` reports success=true with the same 13 finding categories. Output is preserved in `audit/slither-v2-output.txt`. The process returned -1 because findings exist; JSON analysis success and detector contents were checked separately. The V2 cancellation restriction was included in this run.
 
-Slither 0.11.6 ran against the project on 18 November 2026 using Python 3.10.9 and Hardhat compilation. It analyzed 19 contracts with 102 detectors. The JSON reports success=true and 13 findings: two Medium, nine Low and two Informational. There are no High findings in this run. These are raw tool severities; the disposition below is the project-specific assessment.
+Slither 0.11.6 ran against the V2 project on 20 November 2026 using Python 3.10.9 and Hardhat compilation. It analyzed 19 contracts with 102 detectors. The JSON reports success=true and 13 findings: two Medium, nine Low and two Informational. There are no High findings in this run. These are raw tool severities; the disposition below is the project-specific assessment.
 
 Command:
 
@@ -30,4 +30,4 @@ The analyzer returned a nonzero process exit because findings exist. Compilation
 
 No production source was changed to suppress these findings after public deployment. The two numeric locals already have defined zero values; adding an explicit assignment would only make that initialization more visible. Timestamp warnings remain operational limitations: Ethereum block timestamps provide ordering and coarse deadlines, not a trusted real-world stopwatch. Tournament operators should allow practical timing margins and retain off-chain evidence.
 
-The existing tests exercise the same production source hashes recorded by the analyzer and the verified Sepolia deployment. No absence-of-vulnerabilities claim is made. Organizer cancellation rights, referee/resolver honesty and finite exchange liquidity remain the substantive governance and financial assumptions described in security-review.md.
+The V2 tests exercise the production source deployed and verified on Sepolia. No absence-of-vulnerabilities claim is made. Referee/resolver honesty, timeout waiting periods and finite exchange liquidity remain the substantive governance and financial assumptions described in security-review.md.
